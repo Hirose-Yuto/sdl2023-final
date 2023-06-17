@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener(function(o,e,t){return console.log(e.tab?"from a content script:"+e.tab.url:"from the extension"),chrome.tabs.create({url:chrome.runtime.getURL("popup.html")}).then(()=>{t({farewell:"goodbye"})}),!0});

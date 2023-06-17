@@ -3,17 +3,18 @@
   "name": "AndyMark via Redigiform",
   "version": "1.0.0",
   "action": {
-    "default_popup": "src/popup.html",
+    "default_popup": "popup.html",
     "default_title": "Click to show an alert"
   },
   "permissions": ["activeTab", "scripting", "tabs", "storage"],
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": ["https://www.andymark.com/cart"],
-      "js": ["src/content-script.js"]
+      "js": ["content_script.js"]
     }
-  ]
+  ],
+  "host_permissions": ["https://www.gaitameonline.com/*"]
 }
