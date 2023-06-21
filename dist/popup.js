@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded",async function(){const s=document.querySelector("#products");if(!s)return;const e=(await chrome.storage.sync.get(["products"])).products,t=e.reduce((d,o)=>(d+=parseInt(o.total_price.trim().slice(1)),d),0);s.innerHTML=`
+document.addEventListener("DOMContentLoaded",async function(){const s=document.querySelector("#products");if(!s)return;const e=(await chrome.storage.sync.get(["products"])).products,t=e.reduce((r,d)=>(r+=parseInt(d.total_price.trim().slice(1)),r),0);s.innerHTML=`
 <div class="ml-auto flex flex-col items-end">
-    ${c(e)}
+    ${a(e)}
 </div>
 <div class="flex justify-end my-2">
     <div>
@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded",async function(){const s=document.q
             <div class="col-end-auto text-end text-2xl font-bold">$${t}</div>
         </div>
         <div class="text-end text-base text-gray-500 m-1">
-            参考価格:<span id="reference-price">1000</span> 円
+            参考価格:<span id="reference-price">????</span> 円
         </div>
     </div>
 </div>
-`,fetch("https://www.gaitameonline.com/rateaj/getrate").then(d=>{console.log(d.json())})});const c=s=>{let e="";for(const t of s)e+=`
+`,fetch("https://www.gaitameonline.com/rateaj/getrate").then(async r=>{const o=(await r.json()).quotes.find(i=>i.currencyPairCode==="USDJPY");if(!o)return;const n=Math.round(parseFloat(o.high)*t),c=document.querySelector("#reference-price");c&&(c.innerHTML=n.toLocaleString())})});const a=s=>{let e="";for(const t of s)e+=`
 <div class="shadow-md my-4 border w-md">
     <div class="p-4 pb-2">
         <div class="font-bold text-base">${t.name}</div>

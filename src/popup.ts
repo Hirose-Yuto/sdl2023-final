@@ -1,4 +1,5 @@
 import {Product, Products} from "./types/products";
+import {GaitameRateAPIResponse} from "./types/gaitame_rate_api";
 
 document.addEventListener('DOMContentLoaded', async function () {
     const productsElement = document.querySelector('#products')
@@ -21,13 +22,19 @@ document.addEventListener('DOMContentLoaded', async function () {
             <div class="col-end-auto text-end text-2xl font-bold">$${sum}</div>
         </div>
         <div class="text-end text-base text-gray-500 m-1">
-            参考価格:<span id="reference-price">1000</span> 円
+            参考価格:<span id="reference-price">????</span> 円
         </div>
     </div>
 </div>
 `;
-    fetch("https://www.gaitameonline.com/rateaj/getrate").then((res: Response) => {
-        console.log(res.json())
+    fetch("https://www.gaitameonline.com/rateaj/getrate").then(async (res: Response) => {
+        const response = (await res.json()) as GaitameRateAPIResponse
+        const rate = response.quotes.find((r) => r.currencyPairCode === "USDJPY")
+        if(!rate) return
+        const price = Math.round(parseFloat(rate.high) * sum)
+        const referencePrice = document.querySelector('#reference-price')
+        if (!referencePrice) return
+        referencePrice.innerHTML = price.toLocaleString()
     })
 })
 
