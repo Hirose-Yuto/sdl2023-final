@@ -1,0 +1,31 @@
+<script setup>
+</script>
+<template>
+  <label class="inline-flex items-center mx-2">
+    <input type="checkbox"
+           :value="modelValue"
+           @input="$emit('update:modelValue', $event.target.value)"
+           class="m-2 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50">
+    <span class="text-base">{{ label }}</span>
+  </label>
+</template>
+
+<script>
+export default {
+  name: "TextInput",
+  props: {
+    label: {
+      required: true,
+      type: String
+    },
+    "modelValue": {
+      type: Boolean
+    }
+  },
+  emits: ["update:modelValue"]
+}
+</script>
+
+<style scoped>
+
+</style>
