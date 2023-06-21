@@ -3,22 +3,7 @@
     <form>
       <div class="my-12">
         <h2 class="text-4xl font-bold m-2">1. 商品情報</h2>
-        <div id="products">
-          <div class="ml-auto flex flex-col items-end">
-            ${getProductRows(products)}
-          </div>
-          <div class="flex justify-end my-2">
-            <div>
-              <div class="border-b border-black w-48 grid grid-cols-2 px-2">
-                <div class="col-start-auto text-2xl font-bold">総額</div>
-                <div class="col-end-auto text-end text-2xl font-bold">$${sum}</div>
-              </div>
-              <div class="text-end text-base text-gray-500 m-1">
-                参考価格:<span id="reference-price">????</span> 円
-              </div>
-            </div>
-          </div>
-        </div>
+        <product-section/>
       </div>
       <div class="my-12">
         <h2 class="text-4xl font-bold m-2">2. 配送情報</h2>
@@ -62,12 +47,14 @@
 import TextInput from "./inputs/TextInput.vue";
 import CheckBox from "./inputs/CheckBox.vue";
 import TextArea from "./inputs/TextArea.vue";
+import ProductSection from "./product/ProductSection.vue";
 
 export default {
   components: {
     TextInput,
     CheckBox,
-    TextArea
+    TextArea,
+    ProductSection
   },
 
   data() {

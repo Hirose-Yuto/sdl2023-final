@@ -1,10 +1,8 @@
 import {Product, Products} from "./types/products";
 import {GaitameRateAPIResponse} from "./types/gaitame_rate_api";
-
 document.addEventListener('DOMContentLoaded', async function () {
     const productsElement = document.querySelector('#products')
     if (!productsElement) return
-
     const products =  (await chrome.storage.sync.get(["products"]))["products"] as Products
     const sum = products.reduce((ac: number, p: Product) => {
         ac += parseInt(p.total_price.trim().slice(1))
