@@ -4,76 +4,169 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Vue));
 })(this, (function (vue) { 'use strict';
 
-  var script$5 = {
-    name: "TextInput",
-    props: {
-      label: {
-        required: true,
-        type: String
+  var script$7 = vue.defineComponent({
+      name: "TextInput",
+      props: {
+          label: {
+              required: true,
+              type: String
+          },
+          placeholder: {
+              type: String
+          },
+          "modelValue": {
+              type: String
+          }
       },
-      placeholder: {
-        type: String
-      },
-      "modelValue": {
-        type: String
-      }
-    },
-    emits: ["update:modelValue"]
-  };
+      emits: ["update:modelValue"]
+  });
 
-  const _hoisted_1$5 = { class: "block m-4" };
-  const _hoisted_2$5 = { class: "text-black text-base font-bold" };
-  const _hoisted_3$5 = ["value", "placeholder"];
+  const _hoisted_1$7 = { class: "block m-4" };
+  const _hoisted_2$7 = { class: "text-black text-base font-bold" };
+  const _hoisted_3$7 = ["value", "placeholder"];
 
-  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$5, [
-      vue.createElementVNode("span", _hoisted_2$5, vue.toDisplayString($props.label), 1 /* TEXT */),
+  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$7, [
+      vue.createElementVNode("span", _hoisted_2$7, vue.toDisplayString(_ctx.label), 1 /* TEXT */),
       vue.createElementVNode("input", {
         type: "text",
-        value: $props.modelValue,
+        value: _ctx.modelValue,
         onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
         required: "",
         class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
-        placeholder: $props.placeholder
-      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_3$5)
+        placeholder: _ctx.placeholder
+      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_3$7)
+    ]))
+  }
+
+  script$7.render = render$7;
+  script$7.__file = "src/inputs/TextInput.vue";
+
+  var script$6 = vue.defineComponent({
+      name: "TextInput",
+      props: {
+          label: {
+              required: true,
+              type: String
+          },
+          "modelValue": {
+              type: Boolean
+          }
+      },
+      emits: ["update:modelValue"]
+  });
+
+  const _hoisted_1$6 = { class: "inline-flex items-center mx-2" };
+  const _hoisted_2$6 = ["value"];
+  const _hoisted_3$6 = { class: "text-base" };
+
+  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$6, [
+      vue.createElementVNode("input", {
+        type: "checkbox",
+        value: _ctx.modelValue,
+        onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
+        class: "m-2 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50"
+      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_2$6),
+      vue.createElementVNode("span", _hoisted_3$6, vue.toDisplayString(_ctx.label), 1 /* TEXT */)
+    ]))
+  }
+
+  script$6.render = render$6;
+  script$6.__file = "src/inputs/CheckBox.vue";
+
+  var script$5 = vue.defineComponent({
+      name: "PostCode",
+      props: {
+          "start": {
+              type: String
+          },
+          "end": {
+              type: String
+          },
+      },
+      emits: ["update:start", "update:end"]
+  });
+
+  const _hoisted_1$5 = { class: "block m-4" };
+  const _hoisted_2$5 = /*#__PURE__*/vue.createElementVNode("span", { class: "text-black text-base font-bold" }, "郵便番号", -1 /* HOISTED */);
+  const _hoisted_3$5 = { class: "flex items-center" };
+  const _hoisted_4$4 = ["value"];
+  const _hoisted_5$3 = /*#__PURE__*/vue.createElementVNode("span", { class: "mx-2" }, "-", -1 /* HOISTED */);
+  const _hoisted_6$3 = ["value"];
+
+  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$5, [
+      _hoisted_2$5,
+      vue.createElementVNode("span", _hoisted_3$5, [
+        vue.createElementVNode("input", {
+          type: "number",
+          value: _ctx.start,
+          onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:start', $event.target.value))),
+          required: "",
+          pattern: "\\d{3}",
+          class: "mt-1 block w-32 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
+          placeholder: "例: 000"
+        }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$4),
+        _hoisted_5$3,
+        vue.createElementVNode("input", {
+          type: "number",
+          value: _ctx.start,
+          onInput: _cache[1] || (_cache[1] = $event => (_ctx.$emit('update:end', $event.target.value))),
+          required: "",
+          pattern: "\\d{4}",
+          class: "mt-1 block w-32 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
+          placeholder: "例: 0000"
+        }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_6$3)
+      ])
     ]))
   }
 
   script$5.render = render$5;
-  script$5.__file = "src/inputs/TextInput.vue";
+  script$5.__file = "src/inputs/PostCode.vue";
 
-  var script$4 = {
-    name: "TextInput",
-    props: {
-      label: {
-        required: true,
-        type: String
+  var script$4 = vue.defineComponent({
+      name: "PostCode",
+      props: {
+          "label": {
+              type: String
+          },
+          "options": {
+              type: (Array)
+          },
+          "modelValue": {
+              type: String
+          },
       },
-      "modelValue": {
-        type: Boolean
-      }
-    },
-    emits: ["update:modelValue"]
-  };
+      emits: ["update:modelValue"]
+  });
 
-  const _hoisted_1$4 = { class: "inline-flex items-center mx-2" };
-  const _hoisted_2$4 = ["value"];
-  const _hoisted_3$4 = { class: "text-base" };
+  const _hoisted_1$4 = { class: "block m-4" };
+  const _hoisted_2$4 = { class: "text-black text-base font-bold" };
+  const _hoisted_3$4 = ["id", "value"];
+  const _hoisted_4$3 = ["for"];
 
   function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$4, [
-      vue.createElementVNode("input", {
-        type: "checkbox",
-        value: $props.modelValue,
-        onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
-        class: "m-2 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50"
-      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_2$4),
-      vue.createElementVNode("span", _hoisted_3$4, vue.toDisplayString($props.label), 1 /* TEXT */)
+    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$4, [
+      vue.createElementVNode("span", _hoisted_2$4, vue.toDisplayString(_ctx.label), 1 /* TEXT */),
+      (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.options, (option) => {
+        return (vue.openBlock(), vue.createElementBlock("div", null, [
+          vue.createElementVNode("input", {
+            type: "radio",
+            id: option.id,
+            value: _ctx.modelValue,
+            onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value)))
+          }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_3$4),
+          vue.createElementVNode("label", {
+            for: option.id
+          }, vue.toDisplayString(option.label), 9 /* TEXT, PROPS */, _hoisted_4$3)
+        ]))
+      }), 256 /* UNKEYED_FRAGMENT */))
     ]))
   }
 
   script$4.render = render$4;
-  script$4.__file = "src/inputs/CheckBox.vue";
+  script$4.__file = "src/inputs/Radio.vue";
 
   var script$3 = vue.defineComponent({
       name: "TextInput",
@@ -221,8 +314,10 @@
 
   var script = {
     components: {
-      TextInput: script$5,
-      CheckBox: script$4,
+      PostCode: script$5,
+      Radio: script$4,
+      TextInput: script$7,
+      CheckBox: script$6,
       TextArea: script$3,
       ProductSection: script$1
     },
@@ -231,6 +326,8 @@
       return {
         fullName: "",
         phone: "",
+        postCodeStart: "",
+        postCodeEnd: "",
         address: "",
         saveDeliver: false,
         deliverAppendix: ""
@@ -246,12 +343,10 @@
   const _hoisted_4 = { class: "my-12" };
   const _hoisted_5 = /*#__PURE__*/vue.createElementVNode("h2", { class: "text-4xl font-bold m-2" }, "2. 配送情報", -1 /* HOISTED */);
   const _hoisted_6 = { class: "pl-4" };
-  const _hoisted_7 = /*#__PURE__*/vue.createStaticVNode("<label class=\"block m-4\"><span class=\"text-black text-base font-bold\">郵便番号</span><span class=\"flex items-center\"><input type=\"number\" name=\"postcode-start\" required pattern=\"\\d{3}\" class=\"mt-1 block w-32 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50\" placeholder=\"例: 000\"><span class=\"mx-2\">-</span><input type=\"number\" name=\"postcode-end\" required pattern=\"\\d{4}\" class=\"mt-1 block w-32 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50\" placeholder=\"例: 0000\"></span></label>", 1);
-  const _hoisted_8 = /*#__PURE__*/vue.createElementVNode("div", { class: "my-12" }, [
-    /*#__PURE__*/vue.createElementVNode("h2", { class: "text-4xl font-bold m-2" }, "3. チーム情報"),
-    /*#__PURE__*/vue.createElementVNode("div", { class: "pl-4" })
-  ], -1 /* HOISTED */);
-  const _hoisted_9 = /*#__PURE__*/vue.createElementVNode("button", {
+  const _hoisted_7 = { class: "my-12" };
+  const _hoisted_8 = /*#__PURE__*/vue.createElementVNode("h2", { class: "text-4xl font-bold m-2" }, "3. チーム情報", -1 /* HOISTED */);
+  const _hoisted_9 = { class: "pl-4" };
+  const _hoisted_10 = /*#__PURE__*/vue.createElementVNode("button", {
     type: "submit",
     class: ""
   }, "aaaa", -1 /* HOISTED */);
@@ -259,8 +354,10 @@
   function render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_product_section = vue.resolveComponent("product-section");
     const _component_text_input = vue.resolveComponent("text-input");
+    const _component_post_code = vue.resolveComponent("post-code");
     const _component_check_box = vue.resolveComponent("check-box");
     const _component_text_area = vue.resolveComponent("text-area");
+    const _component_radio = vue.resolveComponent("radio");
 
     return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
       vue.createElementVNode("form", null, [
@@ -283,27 +380,37 @@
               modelValue: $data.phone,
               "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => (($data.phone) = $event))
             }, null, 8 /* PROPS */, ["modelValue"]),
-            _hoisted_7,
+            vue.createVNode(_component_post_code, {
+              start: $data.postCodeStart,
+              "onUpdate:start": _cache[2] || (_cache[2] = $event => (($data.postCodeStart) = $event)),
+              end: $data.postCodeEnd,
+              "onUpdate:end": _cache[3] || (_cache[3] = $event => (($data.postCodeEnd) = $event))
+            }, null, 8 /* PROPS */, ["start", "end"]),
             vue.createVNode(_component_text_input, {
               label: "住所",
               placeholder: "例: 〇〇県〇〇市〇〇町1-2-3",
               modelValue: $data.address,
-              "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => (($data.address) = $event))
+              "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => (($data.address) = $event))
             }, null, 8 /* PROPS */, ["modelValue"]),
             vue.createVNode(_component_check_box, {
               label: "配送情報を記録する",
               modelValue: $data.saveDeliver,
-              "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => (($data.saveDeliver) = $event))
+              "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => (($data.saveDeliver) = $event))
             }, null, 8 /* PROPS */, ["modelValue"]),
             vue.createVNode(_component_text_area, {
               label: "備考",
               modelValue: $data.deliverAppendix,
-              "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => (($data.deliverAppendix) = $event))
+              "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => (($data.deliverAppendix) = $event))
             }, null, 8 /* PROPS */, ["modelValue"])
           ])
         ]),
-        _hoisted_8,
-        _hoisted_9
+        vue.createElementVNode("div", _hoisted_7, [
+          _hoisted_8,
+          vue.createElementVNode("div", _hoisted_9, [
+            vue.createVNode(_component_radio)
+          ])
+        ]),
+        _hoisted_10
       ])
     ]))
   }
