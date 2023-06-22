@@ -1,6 +1,6 @@
 <template>
   <div class="ml-auto flex flex-col items-end">
-    ${getProductRows(products)}
+    <product-card v-for="product in products" :product="product"/>
   </div>
   <div class="flex justify-end my-2">
     <div>
@@ -15,20 +15,48 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from "vue";
+import {GaitameRateAPIResponse} from "../types/gaitame_rate_api";
+import {Product, Products} from "../types/products";
+import ProductCard from "./ProductCard.vue";
+
+export default defineComponent({
   name: "ProductSection",
+  components: {ProductCard},
   data() {
     return {
-      products: [],
-      referencePrice: 0,
+      products: [] as Products,
+      referencePrice: "0",
       sum: 0,
     }
   },
-  async mounted() {
-    console.log(await chrome.storage.sync.get(["products"]))
+  mounted() {
+    this.updateProduct()
+  },
+  methods: {
+    async updateProduct() {
+      const products = (await chrome.storage.sync.get(["products"]))["products"] as Products
+      this.products = products
+      this.sum = products.reduce((ac: number, p: Product) => {
+        ac += parseInt(p.total_price.trim().slice(1))
+        return ac
+      }, 0)
+    },
+    async updateReferencePrice(sum: number) {
+      const res = await fetch('https://www.gaitameonline.com/rateaj/getrate')
+      const response = (await res.json()) as GaitameRateAPIResponse
+      const rate = response.quotes.find((r) => r.currencyPairCode === "USDJPY")
+      if (!rate) return
+      this.referencePrice = Math.round(parseFloat(rate.high) * sum).toLocaleString()
+    }
+  },
+  watch: {
+    sum: function (newVal, _) {
+      this.updateReferencePrice(newVal)
+    }
   }
-}
+})
 </script>
 
 <style scoped>

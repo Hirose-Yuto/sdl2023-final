@@ -1,5 +1,3 @@
-<script setup>
-</script>
 <template>
   <label class="block m-4">
     <span class="text-black text-base font-bold">{{ label }}</span>
@@ -13,8 +11,10 @@
   </label>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from "vue";
+
+export default defineComponent({
   name: "TextInput",
   props: {
     label: {
@@ -26,10 +26,10 @@ export default {
     },
     "modelValue": {
       type: String
-    }
+    },
   },
   emits: ["update:modelValue"]
-}
+})
 </script>
 
 <style scoped>
