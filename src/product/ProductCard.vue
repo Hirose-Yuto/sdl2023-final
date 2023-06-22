@@ -1,5 +1,5 @@
 <template>
-  <div class="shadow-md my-4 border w-md">
+  <div class="shadow-md my-4 border min-w-full sm:w-md sm:min-w-0">
     <div class="p-4 pb-2">
       <div class="font-bold text-base">{{ product.name }}</div>
       <div class="font-light text-base">{{ product.sku }}</div>

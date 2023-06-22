@@ -2,9 +2,10 @@
   <div class="block m-4">
     <span class="text-black text-base font-bold">{{ label }}</span>
     <div class="flex">
-      <div class="flex items-center m-2 ml-0" v-for="option in options" >
+      <div class="flex items-center m-2 ml-0" v-for="option in options">
         <input type="radio"
                class="form-radio mr-2"
+               required
                :name="label"
                :id="option.id"
                :value="option.id"
@@ -18,11 +19,7 @@
 
 <script lang="ts">
 import {defineComponent} from "vue";
-
-export declare type RadioOption = {
-  label: string
-  id: string
-}
+import {RadioOption} from "../external/formOptions/types";
 
 export default defineComponent({
   name: "PostCode",

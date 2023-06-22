@@ -17,11 +17,21 @@
         </div>
       </div>
       <div class="my-12">
-        <h2 class="text-4xl font-bold m-2">3. チーム情報</h2>
+        <h2 class="text-4xl font-bold m-2">3. 団体情報</h2>
         <div class="pl-4">
           <radio label="団体としての購入ですか？" v-model="isRobotTeam"
-                 :options='[{label: "はい", id: "yes"}, {label: "いいえ", id: "no"}]'/>
-          {{ isRobotTeam }}
+                 :options='YesNoOptions'/>
+          <div v-if="isRobotTeam === 'yes'">
+            <custom-select label="利用目的を教えてください" v-model="purposeAsGroup" :options="PurposesAsGroup"/>
+            <text-input label="チーム番号・ID等" placeholder="例: 0000" v-model="teamNumber"/>
+            <text-input label="チーム名・会社名" placeholder="例: Redigiform" v-model="teamName"/>
+          </div>
+          <div v-if="isRobotTeam === 'no'">
+            <text-input label="利用目的を教えてください" v-model="purposeAsPerson"/>
+          </div>
+          <check-box label="団体情報を記録する" v-model="saveGroup"/>
+          <text-area label="備考" v-model="groupAppendix"/>
+
         </div>
       </div>
       <button type="submit" class="">aaaa</button>
@@ -33,20 +43,22 @@
 import TextInput from "./inputs/TextInput.vue";
 import CheckBox from "./inputs/CheckBox.vue";
 import PostCode from "./inputs/PostCode.vue";
-import YesNoRadio from "./inputs/YesNoRadio.vue";
 import Radio from "./inputs/Radio.vue";
 import TextArea from "./inputs/TextArea.vue";
 import ProductSection from "./product/ProductSection.vue";
+import CustomSelect from "./inputs/Select.vue";
+import {YesNoOptions} from './external/formOptions/YesNoOptions'
+import {PurposesAsGroup} from "./external/formOptions/PurposesAsGroup.js";
 
 export default {
   components: {
     PostCode,
-    YesNoRadio,
     Radio,
     TextInput,
     CheckBox,
     TextArea,
-    ProductSection
+    ProductSection,
+    CustomSelect
   },
 
   data() {
@@ -59,10 +71,19 @@ export default {
       saveDeliver: false,
       deliverAppendix: "",
 
-      isRobotTeam: ""
+      isRobotTeam: "",
+      purposeAsPerson: "",
+      purposeAsGroup: "",
+      teamNumber: "",
+      teamName: "",
+      saveGroup: false,
+      groupAppendix: "",
+
+
+      YesNoOptions,
+      PurposesAsGroup
     }
   },
-
   methods: {}
 }
 </script>

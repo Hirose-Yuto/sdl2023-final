@@ -1,5 +1,3 @@
-<script setup>
-</script>
 <template>
   <label class="inline-flex items-center mx-2">
     <input type="checkbox"

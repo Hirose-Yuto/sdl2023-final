@@ -884,8 +884,16 @@ select {
   width: 28rem;
 }
 
+.min-w-full {
+  min-width: 100%;
+}
+
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .transform {
@@ -1068,4 +1076,24 @@ select {
 
 .focus\:ring-offset-0:focus {
   --tw-ring-offset-width: 0px;
+}
+
+@media (min-width: 640px) {
+  .sm\:w-md {
+    width: 28rem;
+  }
+
+  .sm\:min-w-0 {
+    min-width: 0px;
+  }
+
+  .sm\:max-w-full {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-md {
+    width: 28rem;
+  }
 }
