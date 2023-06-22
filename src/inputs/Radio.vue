@@ -1,13 +1,17 @@
 <template>
   <div class="block m-4">
     <span class="text-black text-base font-bold">{{ label }}</span>
-    <div v-for="option in options">
-      <input type="radio"
-             :id="option.id"
-             :value="modelValue"
-             @input="$emit('update:modelValue', $event.target.value)"
-      >
-      <label :for="option.id">{{ option.label }}</label>
+    <div class="flex">
+      <div class="flex items-center m-2 ml-0" v-for="option in options" >
+        <input type="radio"
+               class="form-radio mr-2"
+               :name="label"
+               :id="option.id"
+               :value="option.id"
+               @input="$emit('update:modelValue', $event.target.value)"
+        >
+        <label :for="option.id">{{ option.label }}</label>
+      </div>
     </div>
   </div>
 </template>

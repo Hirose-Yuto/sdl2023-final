@@ -19,7 +19,9 @@
       <div class="my-12">
         <h2 class="text-4xl font-bold m-2">3. チーム情報</h2>
         <div class="pl-4">
-          <radio/>
+          <radio label="団体としての購入ですか？" v-model="isRobotTeam"
+                 :options='[{label: "はい", id: "yes"}, {label: "いいえ", id: "no"}]'/>
+          {{ isRobotTeam }}
         </div>
       </div>
       <button type="submit" class="">aaaa</button>
@@ -31,6 +33,7 @@
 import TextInput from "./inputs/TextInput.vue";
 import CheckBox from "./inputs/CheckBox.vue";
 import PostCode from "./inputs/PostCode.vue";
+import YesNoRadio from "./inputs/YesNoRadio.vue";
 import Radio from "./inputs/Radio.vue";
 import TextArea from "./inputs/TextArea.vue";
 import ProductSection from "./product/ProductSection.vue";
@@ -38,6 +41,7 @@ import ProductSection from "./product/ProductSection.vue";
 export default {
   components: {
     PostCode,
+    YesNoRadio,
     Radio,
     TextInput,
     CheckBox,
@@ -53,7 +57,9 @@ export default {
       postCodeEnd: "",
       address: "",
       saveDeliver: false,
-      deliverAppendix: ""
+      deliverAppendix: "",
+
+      isRobotTeam: ""
     }
   },
 
