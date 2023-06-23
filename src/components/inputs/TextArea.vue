@@ -1,13 +1,15 @@
 <template>
   <label class="block m-4">
-    <span class="text-black text-base font-bold">{{ label }}</span>
+    <span class="text-black text-base font-bold">{{ label }}<span v-if="required" class="text-red-500">*</span></span>
     <textarea type="text"
               name="deliver-appendix"
               :value="modelValue"
               @input="$emit('update:modelValue', $event.target.value)"
               class="mt-1 block w-full rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50"
               rows="4"
-              :placeholder="placeholder"></textarea>
+              :placeholder="placeholder"
+              :required="required"
+    ></textarea>
   </label>
 </template>
 
@@ -21,6 +23,7 @@ export default defineComponent({
       required: true,
       type: String
     },
+    required: Boolean,
     placeholder: {
       type: String
     },

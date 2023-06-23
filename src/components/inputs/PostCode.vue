@@ -1,6 +1,6 @@
 <template>
   <label class="block m-4">
-    <span class="text-black text-base font-bold">郵便番号</span>
+    <span class="text-black text-base font-bold">郵便番号<span class="text-red-500">*</span></span>
     <span class="flex items-center">
       <input type="number"
              :value="start"
@@ -11,7 +11,7 @@
              placeholder="例: 000">
       <span class="mx-2">-</span>
       <input type="number"
-             :value="start"
+             :value="end"
              @input="$emit('update:end', $event.target.value)"
              required
              pattern="\d{4}"

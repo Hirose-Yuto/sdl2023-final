@@ -2,11 +2,11 @@
 </script>
 <template>
   <label class="block m-4">
-    <span class="text-black text-base font-bold">{{ label }}</span>
-    <input type="text"
+    <span class="text-black text-base font-bold">{{ label }}<span v-if="required" class="text-red-500">*</span></span>
+    <input :type="type ?? 'text'"
            :value="modelValue"
            @input="$emit('update:modelValue', $event.target.value)"
-           required
+           :required="required"
            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
            :placeholder="placeholder">
   </label>
@@ -22,6 +22,8 @@ export default defineComponent({
       required: true,
       type: String
     },
+    required: Boolean,
+    type: String,
     placeholder: {
       type: String
     },

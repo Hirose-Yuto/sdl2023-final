@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import {Product} from "../types/products";
+import {Product} from "../../types/products";
 import {PropType} from "vue";
 import {defineComponent} from "vue";
 

@@ -1,10 +1,11 @@
 <template>
   <label class="inline-flex items-center mx-2">
     <input type="checkbox"
+           :required="required"
            :value="modelValue"
            @input="$emit('update:modelValue', $event.target.value)"
            class="m-2 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50">
-    <span class="text-base">{{ label }}</span>
+    <span class="text-base">{{ label }}<span v-if="required" class="text-red-500">*</span> </span>
   </label>
 </template>
 
@@ -18,6 +19,7 @@ export default defineComponent({
       required: true,
       type: String
     },
+    required: Boolean,
     "modelValue": {
       type: Boolean
     }
