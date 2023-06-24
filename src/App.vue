@@ -1,6 +1,7 @@
 <template>
   <div class="container mx-auto py-10 max-w-lg">
-    <form onsubmit="">
+    <thanks v-if="isOrderComplete" :email="inChargeEmail"/>
+    <form v-else @submit.prevent="submit">
       <div class="my-12">
         <h2 class="text-4xl font-bold m-2">1. 商品情報</h2>
         <product-section :products="products" :sum-dollar="sumDollar" :reference-price-yen="referencePriceYen"/>
@@ -64,8 +65,10 @@ import {YesNoOptions} from './external/formOptions/YesNoOptions'
 import {PurposesAsGroup} from "./external/formOptions/PurposesAsGroup.js";
 import {OrderTypes} from "./external/formOptions/OrderTypes.js";
 import {Product, Products} from "./types/products";
+import {apiRequest} from "./external/formOptions/apiRequest";
 import {defineComponent} from "vue";
-import {GaitameRateAPIResponse} from "./types/gaitame_rate_api";
+import {calculateShippingFee, DomesticShippingFee, getUSDRateByAPI, OrderAPIURL} from "./external/constants";
+import Thanks from "./pages/Thanks.vue";
 
 export default defineComponent({
   components: {
@@ -76,7 +79,8 @@ export default defineComponent({
     TextArea,
     ProductSection,
     CustomSelect,
-    SubmitButton
+    SubmitButton,
+    Thanks
   },
 
   data() {
@@ -111,7 +115,7 @@ export default defineComponent({
       sumDollar: 0,
       rate: 0,
 
-
+      isOrderComplete: false,
     }
   },
   async mounted() {
@@ -123,7 +127,7 @@ export default defineComponent({
       return Math.round(this.rate * this.sumDollar).toLocaleString()
     },
     estimatedShippingFeeYen: function () {
-      return Math.round(this.rate * this.calculateShippingFee(this.sumDollar) + 1500).toLocaleString()
+      return Math.round(this.rate * calculateShippingFee(this.sumDollar) + DomesticShippingFee).toLocaleString()
     },
   },
   methods: {
@@ -136,20 +140,54 @@ export default defineComponent({
       }, 0)
     },
     async getUSDRate() {
-      const res = await fetch('https://www.gaitameonline.com/rateaj/getrate')
-      const response = (await res.json()) as GaitameRateAPIResponse
-      this.rate = parseFloat(response.quotes.find((r) => r.currencyPairCode === "USDJPY")?.high ?? "0")
+      this.rate = await getUSDRateByAPI()
     },
     async updateReferencePrice(sum: number) {
       this.referencePriceYen = Math.round(this.rate * sum).toLocaleString()
     },
-    calculateShippingFee(sum: number) {
-      // <300で$90
-      // 0.37x - 21
-      // 800>で$275
-      if (sum <= 300) return 90
-      if (sum >= 800) return 275
-      return 0.37 * sum - 21
+    async submit() {
+      // ToDo: 保存処理
+      const response = await fetch(OrderAPIURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: this.fullName,
+          phone: this.phone,
+          postCodeStart: this.postCodeStart,
+          postCodeEnd: this.postCodeEnd,
+          address: this.address,
+          saveDeliver: this.saveDeliver,
+          deliverAppendix: this.deliverAppendix,
+
+          isRobotTeam: this.isRobotTeam,
+          purposeAsPerson: this.purposeAsPerson,
+          purposeAsGroup: this.purposeAsGroup,
+          teamNumber: this.teamNumber,
+          teamName: this.teamName,
+          saveGroup: this.saveGroup,
+          groupAppendix: this.groupAppendix,
+
+          personInCharge: this.personInCharge,
+          inChargeEmail: this.inChargeEmail,
+          orderType: this.orderType,
+          otherContact: this.otherContact,
+          orderAppendix: this.orderAppendix,
+
+          products: this.products,
+          sumDollar: this.sumDollar,
+          rate: this.rate,
+
+          referencePriceYen: this.referencePriceYen,
+          estimatedShippingFeeYen: this.estimatedShippingFeeYen,
+        } as apiRequest)
+      })
+      if (response.ok) {
+        this.isOrderComplete = true
+      }
+      console.log(response)
+      // ToDo: responseによって切り替え
     }
   }
 })

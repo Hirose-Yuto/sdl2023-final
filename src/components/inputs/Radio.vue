@@ -4,7 +4,7 @@
     <div :class="{'flex': !vertical}">
       <div class="flex items-center m-2 ml-0" v-for="option in options">
         <input type="radio"
-               class="form-radio mr-2"
+               class="form-radio mr-2 "
                :required="required"
                :name="label"
                :id="option.id"

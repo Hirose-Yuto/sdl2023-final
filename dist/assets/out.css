@@ -848,6 +848,14 @@ select {
   margin-top: 0.5rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -878,6 +886,18 @@ select {
 
 .w-full {
   width: 100%;
+}
+
+.w-md {
+  width: 28rem;
+}
+
+.w-44 {
+  width: 11rem;
+}
+
+.w-56 {
+  width: 14rem;
 }
 
 .min-w-full {
@@ -971,6 +991,10 @@ select {
   padding: 0.75rem;
 }
 
+.p-9 {
+  padding: 2.25rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1048,6 +1072,11 @@ select {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-bold {
