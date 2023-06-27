@@ -9,6 +9,10 @@ module.exports = {
         'lg': '32rem',
         'xl': '36rem',
         '2xl': '40rem',
+      },
+      zIndex: {
+        '1': '1',
+        '2': '2',
       }
     },
   },

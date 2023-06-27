@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <button @click="closeWindow" class="mt-10 p-3 border border-black rounded w-56">画面を閉じる</button>
+    <button @click="closeWindow" class="mt-10 p-3 border vo rounded w-56">画面を閉じる</button>
   </div>
 
 </template>

@@ -16,5 +16,6 @@
       "js": ["content_script.js"]
     }
   ],
-  "host_permissions": ["https://www.gaitameonline.com/*"]
+  "host_permissions": ["https://www.gaitameonline.com/*",
+  "https://script.google.com/macros/s/AKfycbxgv6TqUHVc_Nvfztza_Cpf9NSOSEUJ3Eq1937y5Pn3D5CIPv1WT-HZkuzXCH4goDr4/exec"]
 }

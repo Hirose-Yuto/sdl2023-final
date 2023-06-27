@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import {Product} from "../../types/products";
+import {chromeProductType} from "../../external/chromeExtension/types";
 import {PropType} from "vue";
 import {defineComponent} from "vue";
 
@@ -22,7 +22,7 @@ export default defineComponent({
   props: {
     product: {
       required: true,
-      type: Object as PropType<Product>
+      type: Object as PropType<chromeProductType>
     }
   }
 })

@@ -9,6 +9,7 @@
                :name="label"
                :id="option.id"
                :value="option.id"
+               :checked="option.id === modelValue"
                @input="$emit('update:modelValue', $event.target.value)"
         >
         <label :for="option.id">{{ option.label }}</label>

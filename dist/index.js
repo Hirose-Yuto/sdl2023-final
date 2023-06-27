@@ -4,7 +4,7 @@
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Vue));
 })(this, (function (vue) { 'use strict';
 
-  var script$b = vue.defineComponent({
+  var script$d = vue.defineComponent({
       name: "TextInput",
       props: {
           label: {
@@ -23,7 +23,7 @@
       emits: ["update:modelValue"]
   });
 
-  const _hoisted_1$b = { class: "block m-4" };
+  const _hoisted_1$d = { class: "block m-4" };
   const _hoisted_2$b = { class: "text-black text-base font-bold" };
   const _hoisted_3$b = {
     key: 0,
@@ -31,8 +31,8 @@
   };
   const _hoisted_4$b = ["type", "value", "required", "placeholder"];
 
-  function render$b(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$b, [
+  function render$d(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$d, [
       vue.createElementVNode("span", _hoisted_2$b, [
         vue.createTextVNode(vue.toDisplayString(_ctx.label), 1 /* TEXT */),
         (_ctx.required)
@@ -50,11 +50,11 @@
     ]))
   }
 
-  script$b.render = render$b;
-  script$b.__file = "src/components/inputs/TextInput.vue";
+  script$d.render = render$d;
+  script$d.__file = "src/components/inputs/TextInput.vue";
 
-  var script$a = vue.defineComponent({
-      name: "TextInput",
+  var script$c = vue.defineComponent({
+      name: "CheckBox",
       props: {
           label: {
               required: true,
@@ -68,21 +68,21 @@
       emits: ["update:modelValue"]
   });
 
-  const _hoisted_1$a = { class: "inline-flex items-center mx-2" };
-  const _hoisted_2$a = ["required", "value"];
+  const _hoisted_1$c = { class: "inline-flex items-center mx-2" };
+  const _hoisted_2$a = ["required", "checked"];
   const _hoisted_3$a = { class: "text-base" };
   const _hoisted_4$a = {
     key: 0,
     class: "text-red-500"
   };
 
-  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$a, [
+  function render$c(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$c, [
       vue.createElementVNode("input", {
         type: "checkbox",
         required: _ctx.required,
-        value: _ctx.modelValue,
-        onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
+        checked: _ctx.modelValue,
+        onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.checked))),
         class: "m-2 rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50"
       }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_2$a),
       vue.createElementVNode("span", _hoisted_3$a, [
@@ -94,10 +94,10 @@
     ]))
   }
 
-  script$a.render = render$a;
-  script$a.__file = "src/components/inputs/CheckBox.vue";
+  script$c.render = render$c;
+  script$c.__file = "src/components/inputs/CheckBox.vue";
 
-  var script$9 = vue.defineComponent({
+  var script$b = vue.defineComponent({
       name: "PostCode",
       props: {
           "start": {
@@ -110,18 +110,18 @@
       emits: ["update:start", "update:end"]
   });
 
-  const _hoisted_1$9 = { class: "block m-4" };
+  const _hoisted_1$b = { class: "block m-4" };
   const _hoisted_2$9 = /*#__PURE__*/vue.createElementVNode("span", { class: "text-black text-base font-bold" }, [
     /*#__PURE__*/vue.createTextVNode("郵便番号"),
     /*#__PURE__*/vue.createElementVNode("span", { class: "text-red-500" }, "*")
   ], -1 /* HOISTED */);
   const _hoisted_3$9 = { class: "flex items-center" };
   const _hoisted_4$9 = ["value"];
-  const _hoisted_5$7 = /*#__PURE__*/vue.createElementVNode("span", { class: "mx-2" }, "-", -1 /* HOISTED */);
+  const _hoisted_5$8 = /*#__PURE__*/vue.createElementVNode("span", { class: "mx-2" }, "-", -1 /* HOISTED */);
   const _hoisted_6$7 = ["value"];
 
-  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$9, [
+  function render$b(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$b, [
       _hoisted_2$9,
       vue.createElementVNode("span", _hoisted_3$9, [
         vue.createElementVNode("input", {
@@ -133,7 +133,7 @@
           class: "mt-1 block w-32 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
           placeholder: "例: 000"
         }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$9),
-        _hoisted_5$7,
+        _hoisted_5$8,
         vue.createElementVNode("input", {
           type: "number",
           value: _ctx.end,
@@ -147,10 +147,10 @@
     ]))
   }
 
-  script$9.render = render$9;
-  script$9.__file = "src/components/inputs/PostCode.vue";
+  script$b.render = render$b;
+  script$b.__file = "src/components/inputs/PostCode.vue";
 
-  var script$8 = vue.defineComponent({
+  var script$a = vue.defineComponent({
       name: "PostCode",
       props: {
           "label": {
@@ -168,18 +168,18 @@
       emits: ["update:modelValue"]
   });
 
-  const _hoisted_1$8 = { class: "block m-4" };
+  const _hoisted_1$a = { class: "block m-4" };
   const _hoisted_2$8 = { class: "text-black text-base font-bold" };
   const _hoisted_3$8 = {
     key: 0,
     class: "text-red-500"
   };
   const _hoisted_4$8 = { class: "flex items-center m-2 ml-0" };
-  const _hoisted_5$6 = ["required", "name", "id", "value"];
+  const _hoisted_5$7 = ["required", "name", "id", "value", "checked"];
   const _hoisted_6$6 = ["for"];
 
-  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$8, [
+  function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$a, [
       vue.createElementVNode("span", _hoisted_2$8, [
         vue.createTextVNode(vue.toDisplayString(_ctx.label), 1 /* TEXT */),
         (_ctx.required)
@@ -198,8 +198,9 @@
               name: _ctx.label,
               id: option.id,
               value: option.id,
+              checked: option.id === _ctx.modelValue,
               onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value)))
-            }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_5$6),
+            }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_5$7),
             vue.createElementVNode("label", {
               for: option.id
             }, vue.toDisplayString(option.label), 9 /* TEXT, PROPS */, _hoisted_6$6)
@@ -209,10 +210,10 @@
     ]))
   }
 
-  script$8.render = render$8;
-  script$8.__file = "src/components/inputs/Radio.vue";
+  script$a.render = render$a;
+  script$a.__file = "src/components/inputs/Radio.vue";
 
-  var script$7 = vue.defineComponent({
+  var script$9 = vue.defineComponent({
       name: "TextInput",
       props: {
           label: {
@@ -230,7 +231,7 @@
       emits: ["update:modelValue"]
   });
 
-  const _hoisted_1$7 = { class: "block m-4" };
+  const _hoisted_1$9 = { class: "block m-4" };
   const _hoisted_2$7 = { class: "text-black text-base font-bold" };
   const _hoisted_3$7 = {
     key: 0,
@@ -238,8 +239,8 @@
   };
   const _hoisted_4$7 = ["value", "placeholder", "required"];
 
-  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$7, [
+  function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$9, [
       vue.createElementVNode("span", _hoisted_2$7, [
         vue.createTextVNode(vue.toDisplayString(_ctx.label), 1 /* TEXT */),
         (_ctx.required)
@@ -259,10 +260,10 @@
     ]))
   }
 
-  script$7.render = render$7;
-  script$7.__file = "src/components/inputs/TextArea.vue";
+  script$9.render = render$9;
+  script$9.__file = "src/components/inputs/TextArea.vue";
 
-  var script$6 = vue.defineComponent({
+  var script$8 = vue.defineComponent({
       name: "ProductCard",
       props: {
           product: {
@@ -272,21 +273,21 @@
       }
   });
 
-  const _hoisted_1$6 = { class: "shadow-md my-4 border min-w-full sm:w-md sm:min-w-0" };
+  const _hoisted_1$8 = { class: "shadow-md my-4 border min-w-full sm:w-md sm:min-w-0" };
   const _hoisted_2$6 = { class: "p-4 pb-2" };
   const _hoisted_3$6 = { class: "font-bold text-base" };
   const _hoisted_4$6 = { class: "font-light text-base" };
-  const _hoisted_5$5 = { class: "text-xl text-pink-600 my-1 mt-2" };
+  const _hoisted_5$6 = { class: "text-xl text-pink-600 my-1 mt-2" };
   const _hoisted_6$5 = { class: "grid grid-cols-2 my-1" };
   const _hoisted_7$2 = { class: "text-xl col-start-auto" };
   const _hoisted_8$2 = { class: "text-xl col-end-auto text-end" };
 
-  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$6, [
+  function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$8, [
       vue.createElementVNode("div", _hoisted_2$6, [
         vue.createElementVNode("div", _hoisted_3$6, vue.toDisplayString(_ctx.product.name), 1 /* TEXT */),
         vue.createElementVNode("div", _hoisted_4$6, vue.toDisplayString(_ctx.product.sku), 1 /* TEXT */),
-        vue.createElementVNode("div", _hoisted_5$5, vue.toDisplayString(_ctx.product.price), 1 /* TEXT */),
+        vue.createElementVNode("div", _hoisted_5$6, vue.toDisplayString(_ctx.product.price), 1 /* TEXT */),
         vue.createElementVNode("div", _hoisted_6$5, [
           vue.createElementVNode("p", _hoisted_7$2, vue.toDisplayString(_ctx.product.quantity) + "個", 1 /* TEXT */),
           vue.createElementVNode("p", _hoisted_8$2, "合計: " + vue.toDisplayString(_ctx.product.total_price), 1 /* TEXT */)
@@ -295,12 +296,12 @@
     ]))
   }
 
-  script$6.render = render$6;
-  script$6.__file = "src/components/product/ProductCard.vue";
+  script$8.render = render$8;
+  script$8.__file = "src/components/product/ProductCard.vue";
 
-  var script$5 = vue.defineComponent({
+  var script$7 = vue.defineComponent({
       name: "ProductSection",
-      components: { ProductCard: script$6 },
+      components: { ProductCard: script$8 },
       props: {
           products: {
               required: true,
@@ -317,18 +318,18 @@
       },
   });
 
-  const _hoisted_1$5 = { class: "ml-auto flex flex-col items-end" };
+  const _hoisted_1$7 = { class: "ml-auto flex flex-col items-end" };
   const _hoisted_2$5 = { class: "flex justify-end my-2" };
   const _hoisted_3$5 = { class: "border-b border-black w-48 grid grid-cols-2 px-2" };
   const _hoisted_4$5 = /*#__PURE__*/vue.createElementVNode("div", { class: "col-start-auto text-2xl font-bold" }, "総額", -1 /* HOISTED */);
-  const _hoisted_5$4 = { class: "col-end-auto text-end text-2xl font-bold" };
+  const _hoisted_5$5 = { class: "col-end-auto text-end text-2xl font-bold" };
   const _hoisted_6$4 = { class: "text-end text-base text-gray-500 m-1" };
 
-  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_product_card = vue.resolveComponent("product-card");
 
     return (vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
-      vue.createElementVNode("div", _hoisted_1$5, [
+      vue.createElementVNode("div", _hoisted_1$7, [
         (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.products, (product) => {
           return (vue.openBlock(), vue.createBlock(_component_product_card, { product: product }, null, 8 /* PROPS */, ["product"]))
         }), 256 /* UNKEYED_FRAGMENT */))
@@ -337,7 +338,7 @@
         vue.createElementVNode("div", null, [
           vue.createElementVNode("div", _hoisted_3$5, [
             _hoisted_4$5,
-            vue.createElementVNode("div", _hoisted_5$4, "$" + vue.toDisplayString(_ctx.sumDollar), 1 /* TEXT */)
+            vue.createElementVNode("div", _hoisted_5$5, "$" + vue.toDisplayString(_ctx.sumDollar), 1 /* TEXT */)
           ]),
           vue.createElementVNode("div", _hoisted_6$4, " 参考価格:" + vue.toDisplayString(_ctx.referencePriceYen) + " 円 ", 1 /* TEXT */)
         ])
@@ -345,10 +346,10 @@
     ], 64 /* STABLE_FRAGMENT */))
   }
 
-  script$5.render = render$5;
-  script$5.__file = "src/components/product/ProductSection.vue";
+  script$7.render = render$7;
+  script$7.__file = "src/components/product/ProductSection.vue";
 
-  var script$4 = vue.defineComponent({
+  var script$6 = vue.defineComponent({
       name: "PostCode",
       props: {
           "label": {
@@ -365,18 +366,18 @@
       emits: ["update:modelValue"]
   });
 
-  const _hoisted_1$4 = { class: "block m-4" };
+  const _hoisted_1$6 = { class: "block m-4" };
   const _hoisted_2$4 = { class: "text-black text-base font-bold" };
   const _hoisted_3$4 = {
     key: 0,
     class: "text-red-500"
   };
   const _hoisted_4$4 = ["required"];
-  const _hoisted_5$3 = /*#__PURE__*/vue.createElementVNode("option", { value: "" }, "選択してください", -1 /* HOISTED */);
-  const _hoisted_6$3 = ["value"];
+  const _hoisted_5$4 = /*#__PURE__*/vue.createElementVNode("option", { value: "" }, "選択してください", -1 /* HOISTED */);
+  const _hoisted_6$3 = ["value", "selected"];
 
-  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$4, [
+  function render$6(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$6, [
       vue.createElementVNode("span", _hoisted_2$4, [
         vue.createTextVNode(vue.toDisplayString(_ctx.label), 1 /* TEXT */),
         (_ctx.required)
@@ -385,22 +386,24 @@
       ]),
       vue.createElementVNode("select", {
         required: _ctx.required,
+        onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
         class: "block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
       }, [
-        _hoisted_5$3,
+        _hoisted_5$4,
         (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.options, (option) => {
           return (vue.openBlock(), vue.createElementBlock("option", {
-            value: option.id
+            value: option.id,
+            selected: option.id === _ctx.modelValue
           }, vue.toDisplayString(option.label), 9 /* TEXT, PROPS */, _hoisted_6$3))
         }), 256 /* UNKEYED_FRAGMENT */))
-      ], 8 /* PROPS */, _hoisted_4$4)
+      ], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$4)
     ]))
   }
 
-  script$4.render = render$4;
-  script$4.__file = "src/components/inputs/Select.vue";
+  script$6.render = render$6;
+  script$6.__file = "src/components/inputs/Select.vue";
 
-  var script$3 = vue.defineComponent({
+  var script$5 = vue.defineComponent({
       name: "SubmitButton",
       props: {
           sumDollar: {
@@ -418,7 +421,7 @@
       }
   });
 
-  const _hoisted_1$3 = { class: "shadow-md rounded-sm p-3 border grid grid-cols-2 gap-4 min-w-full sm:w-2xl sm:min-w-0" };
+  const _hoisted_1$5 = { class: "shadow-md rounded-sm p-3 border grid grid-cols-2 gap-4 min-w-full sm:w-2xl sm:min-w-0" };
   const _hoisted_2$3 = /*#__PURE__*/vue.createElementVNode("div", { class: "text-gray-700" }, [
     /*#__PURE__*/vue.createTextVNode(" 「注文を確定」ボタンを押してご注文いただくことで、 お客様はRedigiformの "),
     /*#__PURE__*/vue.createElementVNode("a", {
@@ -437,19 +440,19 @@
     type: "submit",
     class: "rounded-xl text-black bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-100 font-medium text-sm px-5 py-1.5 text-center w-full"
   }, " 注文を確定 ", -1 /* HOISTED */);
-  const _hoisted_5$2 = { class: "mt-1" };
+  const _hoisted_5$3 = { class: "mt-1" };
   const _hoisted_6$2 = { class: "text-lg text-pink-600 my-1 mt-2" };
   const _hoisted_7$1 = /*#__PURE__*/vue.createElementVNode("span", { class: "text-gray-400" }, " + 配送料・手数料 + 税 ", -1 /* HOISTED */);
   const _hoisted_8$1 = { class: "mt-1" };
   const _hoisted_9$1 = { class: "text-gray-400 text-base" };
   const _hoisted_10$1 = { class: "text-gray-400" };
 
-  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [
+  function render$5(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$5, [
       _hoisted_2$3,
       vue.createElementVNode("div", _hoisted_3$3, [
         _hoisted_4$3,
-        vue.createElementVNode("div", _hoisted_5$2, [
+        vue.createElementVNode("div", _hoisted_5$3, [
           vue.createElementVNode("span", _hoisted_6$2, " ご請求額: $" + vue.toDisplayString(_ctx.sumDollar), 1 /* TEXT */),
           _hoisted_7$1
         ]),
@@ -461,8 +464,8 @@
     ]))
   }
 
-  script$3.render = render$3;
-  script$3.__file = "src/components/SubmitButton.vue";
+  script$5.render = render$5;
+  script$5.__file = "src/components/SubmitButton.vue";
 
   const YesNoOptions = [
       { label: "はい", id: "yes" },
@@ -498,58 +501,25 @@
       return parseFloat(response.quotes.find((r) => r.currencyPairCode === "USDJPY")?.high ?? "0");
   };
   const DomesticShippingFee = 1500;
-  const OrderAPIURL = '';
+  const OrderAPIURL = 'https://script.google.com/macros/s/AKfycbxgv6TqUHVc_Nvfztza_Cpf9NSOSEUJ3Eq1937y5Pn3D5CIPv1WT-HZkuzXCH4goDr4/exec';
 
-  var script$2 = vue.defineComponent({
+  var script$4 = vue.defineComponent({
       name: "GreenCheck"
   });
 
-  const _hoisted_1$2 = {
-    id: "_レイヤー_1",
-    "data-name": "レイヤー 1",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 244.77 244.77"
-  };
-  const _hoisted_2$2 = /*#__PURE__*/vue.createElementVNode("circle", {
-    cx: "122.38",
-    cy: "122.38",
-    r: "122.38",
-    style: {"fill":"#68b82e"}
-  }, null, -1 /* HOISTED */);
-  const _hoisted_3$2 = /*#__PURE__*/vue.createElementVNode("g", null, [
-    /*#__PURE__*/vue.createElementVNode("rect", {
-      x: "86.99",
-      y: "110.62",
-      width: "8.9",
-      height: "52.31",
-      transform: "translate(-69.35 101.91) rotate(-44)",
-      style: {"fill":"#fff"}
-    }),
-    /*#__PURE__*/vue.createElementVNode("rect", {
-      x: "132.63",
-      y: "75",
-      width: "9.41",
-      height: "94.77",
-      transform: "translate(129.97 -61.43) rotate(46)",
-      style: {"fill":"#fff"}
-    })
-  ], -1 /* HOISTED */);
-  const _hoisted_4$2 = [
-    _hoisted_2$2,
-    _hoisted_3$2
-  ];
+  const _hoisted_1$4 = { src: "/assets/green-check.svg" };
 
-  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("svg", _hoisted_1$2, _hoisted_4$2))
+  function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("img", _hoisted_1$4))
   }
 
-  script$2.render = render$2;
-  script$2.__file = "src/images/GreenCheck.vue";
+  script$4.render = render$4;
+  script$4.__file = "src/images/GreenCheck.vue";
 
-  var script$1 = vue.defineComponent({
+  var script$3 = vue.defineComponent({
       name: "Thanks",
       components: {
-          GreenCheck: script$2
+          GreenCheck: script$4
       },
       props: {
           email: {
@@ -564,11 +534,11 @@
       }
   });
 
-  const _hoisted_1$1 = { class: "text-center" };
-  const _hoisted_2$1 = /*#__PURE__*/vue.createElementVNode("span", { class: "text-2xl m-2" }, "ご注文ありがとうございます！", -1 /* HOISTED */);
-  const _hoisted_3$1 = { class: "text-gray-500" };
-  const _hoisted_4$1 = { class: "m-2 text-sm" };
-  const _hoisted_5$1 = /*#__PURE__*/vue.createElementVNode("div", null, "下記のメールアドレスにご注文の確認メールを送信しました", -1 /* HOISTED */);
+  const _hoisted_1$3 = { class: "text-center" };
+  const _hoisted_2$2 = /*#__PURE__*/vue.createElementVNode("span", { class: "text-2xl m-2" }, "ご注文ありがとうございます！", -1 /* HOISTED */);
+  const _hoisted_3$2 = { class: "text-gray-500" };
+  const _hoisted_4$2 = { class: "m-2 text-sm" };
+  const _hoisted_5$2 = /*#__PURE__*/vue.createElementVNode("div", null, "下記のメールアドレスにご注文の確認メールを送信しました", -1 /* HOISTED */);
   const _hoisted_6$1 = /*#__PURE__*/vue.createElementVNode("div", { class: "m-2 mt-4 text-sm" }, [
     /*#__PURE__*/vue.createElementVNode("div", { class: "m-1" }, " 担当者からの発注完了メールをお待ち下さい "),
     /*#__PURE__*/vue.createElementVNode("div", null, [
@@ -580,43 +550,151 @@
     ])
   ], -1 /* HOISTED */);
 
-  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$3(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_green_check = vue.resolveComponent("green-check");
 
-    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, [
+    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$3, [
       vue.createVNode(_component_green_check, {
         width: "161",
         class: "mx-auto my-4"
       }),
-      _hoisted_2$1,
-      vue.createElementVNode("div", _hoisted_3$1, [
-        vue.createElementVNode("div", _hoisted_4$1, [
-          _hoisted_5$1,
+      _hoisted_2$2,
+      vue.createElementVNode("div", _hoisted_3$2, [
+        vue.createElementVNode("div", _hoisted_4$2, [
+          _hoisted_5$2,
           vue.createElementVNode("div", null, vue.toDisplayString(_ctx.email), 1 /* TEXT */)
         ]),
         _hoisted_6$1
       ]),
       vue.createElementVNode("button", {
         onClick: _cache[0] || (_cache[0] = (...args) => (_ctx.closeWindow && _ctx.closeWindow(...args))),
-        class: "mt-10 p-3 border border-black rounded w-56"
+        class: "mt-10 p-3 border vo rounded w-56"
       }, "画面を閉じる")
     ]))
   }
 
+  script$3.render = render$3;
+  script$3.__file = "src/pages/Thanks.vue";
+
+  var script$2 = vue.defineComponent({
+      name: "Warning"
+  });
+
+  const _hoisted_1$2 = { src: "/assets/warning.svg" };
+
+  function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    return (vue.openBlock(), vue.createElementBlock("img", _hoisted_1$2))
+  }
+
+  script$2.render = render$2;
+  script$2.__file = "src/images/Warning.vue";
+
+  var script$1 = vue.defineComponent({
+      name: "Modal",
+      components: { Warning: script$2 },
+      props: {
+          "message": {
+              required: true,
+              type: String
+          }
+      },
+      methods: {
+          closeModal() {
+              this.$emit("close-modal");
+          },
+      },
+  });
+
+  const _hoisted_1$1 = { id: "modal" };
+  const _hoisted_2$1 = {
+    id: "modal-content",
+    class: "bg-white z-2 text-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-xs sm:w-72"
+  };
+  const _hoisted_3$1 = { class: "p-4" };
+  const _hoisted_4$1 = /*#__PURE__*/vue.createElementVNode("div", { class: "text-lg" }, "エラーが発生しました", -1 /* HOISTED */);
+  const _hoisted_5$1 = { class: "text-gray-500" };
+
+  function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_warning = vue.resolveComponent("warning");
+
+    return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, [
+      vue.createElementVNode("div", _hoisted_2$1, [
+        vue.createElementVNode("div", _hoisted_3$1, [
+          vue.createVNode(_component_warning, {
+            width: "60",
+            class: "mx-auto"
+          }),
+          _hoisted_4$1,
+          vue.createElementVNode("div", _hoisted_5$1, vue.toDisplayString(_ctx.message || "しばらく待ってからやり直してください"), 1 /* TEXT */)
+        ]),
+        vue.createElementVNode("button", {
+          class: "inline-block w-full bg-red-400 h-7 text-white border rounded text-center align-middle bg-white",
+          onClick: _cache[0] || (_cache[0] = (...args) => (_ctx.closeModal && _ctx.closeModal(...args)))
+        }, " 閉じる ")
+      ]),
+      vue.createElementVNode("div", {
+        id: "modal-overlay",
+        class: "block fixed top-0 left-0 w-full h-full bg-black opacity-75 z-1",
+        onClick: _cache[1] || (_cache[1] = (...args) => (_ctx.closeModal && _ctx.closeModal(...args)))
+      })
+    ]))
+  }
+
   script$1.render = render$1;
-  script$1.__file = "src/pages/Thanks.vue";
+  script$1.__file = "src/components/ErrorModal.vue";
+
+  const ChromeProductKey = "products";
+  const ChromeDeliverKey = "deliver";
+  const ChromeGroupKey = "group";
+  const ChromeOrderKey = "order";
+
+  const getChromeProducts = async () => {
+      return (await chrome.storage.sync.get([ChromeProductKey]))[ChromeProductKey];
+  };
+  const getChromeDeliver = async () => {
+      return (await chrome.storage.sync.get([ChromeDeliverKey]))[ChromeDeliverKey];
+  };
+  const getChromeGroup = async () => {
+      return (await chrome.storage.sync.get([ChromeGroupKey]))[ChromeGroupKey];
+  };
+  const getChromeOrder = async () => {
+      return (await chrome.storage.sync.get([ChromeOrderKey]))[ChromeOrderKey];
+  };
+
+  const clearChromeProduct = async () => {
+      await chrome.storage.sync.set({ [ChromeProductKey]: {} });
+  };
+  const saveChromeDeliver = async (data) => {
+      await chrome.storage.sync.set({ [ChromeDeliverKey]: data });
+  };
+  const clearChromeDeliver = async () => {
+      await chrome.storage.sync.set({ [ChromeDeliverKey]: {} });
+  };
+  const saveChromeGroup = async (data) => {
+      await chrome.storage.sync.set({ [ChromeGroupKey]: data });
+  };
+  const clearChromeGroup = async () => {
+      await chrome.storage.sync.set({ [ChromeGroupKey]: {} });
+  };
+  const saveChromeOrder = async (data) => {
+      await chrome.storage.sync.set({ [ChromeOrderKey]: data });
+  };
+  const clearChromeOrder = async () => {
+      await chrome.storage.sync.set({ [ChromeOrderKey]: {} });
+  };
 
   var script = vue.defineComponent({
       components: {
-          PostCode: script$9,
-          Radio: script$8,
-          TextInput: script$b,
-          CheckBox: script$a,
-          TextArea: script$7,
-          ProductSection: script$5,
-          CustomSelect: script$4,
-          SubmitButton: script$3,
-          Thanks: script$1
+          Modal: script$1,
+          PostCode: script$b,
+          Radio: script$a,
+          TextInput: script$d,
+          CheckBox: script$c,
+          TextArea: script$9,
+          ProductSection: script$7,
+          CustomSelect: script$6,
+          SubmitButton: script$5,
+          Thanks: script$3
       },
       data() {
           return {
@@ -638,6 +716,7 @@
               inChargeEmail: "",
               orderType: "",
               otherContact: "",
+              saveOrder: false,
               orderAppendix: "",
               YesNoOptions,
               PurposesAsGroup,
@@ -646,11 +725,16 @@
               sumDollar: 0,
               rate: 0,
               isOrderComplete: false,
+              isShowErrorModal: false,
+              errorMessage: "",
           };
       },
-      async mounted() {
-          await this.updateProduct();
-          await this.getUSDRate();
+      mounted() {
+          this.loadProduct().then();
+          this.loadDeliver().then();
+          this.loadGroup().then();
+          this.loadOrder().then();
+          this.getUSDRate().then();
       },
       computed: {
           referencePriceYen: function () {
@@ -661,21 +745,54 @@
           },
       },
       methods: {
-          async updateProduct() {
-              const products = (await chrome.storage.sync.get(["products"]))["products"];
-              this.products = products;
-              this.sumDollar = products.reduce((ac, p) => {
-                  ac += parseInt(p.total_price.trim().slice(1));
-                  return ac;
-              }, 0);
-          },
-          async getUSDRate() {
-              this.rate = await getUSDRateByAPI();
-          },
-          async updateReferencePrice(sum) {
-              this.referencePriceYen = Math.round(this.rate * sum).toLocaleString();
-          },
           async submit() {
+              if (this.saveDeliver) {
+                  saveChromeDeliver({
+                      fullName: this.fullName,
+                      phone: this.phone,
+                      postCodeStart: this.postCodeStart,
+                      postCodeEnd: this.postCodeEnd,
+                      address: this.address,
+                      saveDeliver: this.saveDeliver,
+                      deliverAppendix: this.deliverAppendix,
+                  }).then(() => {
+                      console.log("deliver information successfully saved!");
+                  });
+              }
+              else {
+                  clearChromeDeliver().then();
+              }
+              if (this.saveGroup) {
+                  saveChromeGroup({
+                      isRobotTeam: this.isRobotTeam,
+                      purposeAsPerson: this.purposeAsPerson,
+                      purposeAsGroup: this.purposeAsGroup,
+                      teamNumber: this.teamNumber,
+                      teamName: this.teamName,
+                      saveGroup: this.saveGroup,
+                      groupAppendix: this.groupAppendix,
+                  }).then(() => {
+                      console.log("group information successfully saved!");
+                  });
+              }
+              else {
+                  clearChromeGroup().then();
+              }
+              if (this.saveOrder) {
+                  saveChromeOrder({
+                      personInCharge: this.personInCharge,
+                      inChargeEmail: this.inChargeEmail,
+                      orderType: this.orderType,
+                      otherContact: this.otherContact,
+                      saveOrder: this.saveOrder,
+                      orderAppendix: this.orderAppendix,
+                  }).then(() => {
+                      console.log("order information successfully saved!");
+                  });
+              }
+              else {
+                  clearChromeOrder().then();
+              }
               const response = await fetch(OrderAPIURL, {
                   method: "POST",
                   headers: {
@@ -700,6 +817,7 @@
                       inChargeEmail: this.inChargeEmail,
                       orderType: this.orderType,
                       otherContact: this.otherContact,
+                      saveOrder: this.saveOrder,
                       orderAppendix: this.orderAppendix,
                       products: this.products,
                       sumDollar: this.sumDollar,
@@ -710,8 +828,70 @@
               });
               if (response.ok) {
                   this.isOrderComplete = true;
+                  await clearChromeProduct();
               }
-              console.log(response);
+              else {
+                  let errorRes = await response.json();
+                  this.errorMessage = errorRes['message'];
+                  this.showErrorModal();
+              }
+          },
+          showErrorModal: function () {
+              this.isShowErrorModal = true;
+          },
+          closeErrorModal: function () {
+              this.isShowErrorModal = false;
+          },
+          async loadProduct() {
+              const products = await getChromeProducts();
+              if (!products)
+                  return;
+              this.products = products;
+              this.sumDollar = products.reduce((ac, p) => {
+                  ac += parseInt(p.total_price.trim().slice(1));
+                  return ac;
+              }, 0);
+          },
+          async getUSDRate() {
+              this.rate = await getUSDRateByAPI();
+          },
+          async updateReferencePrice(sum) {
+              this.referencePriceYen = Math.round(this.rate * sum).toLocaleString();
+          },
+          async loadDeliver() {
+              const deliver = await getChromeDeliver();
+              if (!deliver)
+                  return;
+              this.fullName = deliver.fullName;
+              this.phone = deliver.phone;
+              this.postCodeStart = deliver.postCodeStart;
+              this.postCodeEnd = deliver.postCodeEnd;
+              this.address = deliver.address;
+              this.saveDeliver = Boolean(deliver.saveDeliver);
+              this.deliverAppendix = deliver.deliverAppendix;
+          },
+          async loadGroup() {
+              const group = await getChromeGroup();
+              if (!group)
+                  return;
+              this.isRobotTeam = group.isRobotTeam;
+              this.purposeAsPerson = group.purposeAsPerson;
+              this.purposeAsGroup = group.purposeAsGroup;
+              this.teamNumber = group.teamNumber;
+              this.teamName = group.teamName;
+              this.saveGroup = Boolean(group.saveGroup);
+              this.groupAppendix = group.groupAppendix;
+          },
+          async loadOrder() {
+              const order = await getChromeOrder();
+              if (!order)
+                  return;
+              this.personInCharge = order.personInCharge;
+              this.inChargeEmail = order.inChargeEmail;
+              this.orderType = order.orderType;
+              this.otherContact = order.otherContact;
+              this.saveOrder = Boolean(order.saveOrder);
+              this.orderAppendix = order.orderAppendix;
           }
       }
   });
@@ -741,6 +921,7 @@
     const _component_radio = vue.resolveComponent("radio");
     const _component_custom_select = vue.resolveComponent("custom-select");
     const _component_submit_button = vue.resolveComponent("submit-button");
+    const _component_modal = vue.resolveComponent("modal");
 
     return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1, [
       (_ctx.isOrderComplete)
@@ -750,7 +931,7 @@
           }, null, 8 /* PROPS */, ["email"]))
         : (vue.openBlock(), vue.createElementBlock("form", {
             key: 1,
-            onSubmit: _cache[19] || (_cache[19] = vue.withModifiers((...args) => (_ctx.submit && _ctx.submit(...args)), ["prevent"]))
+            onSubmit: _cache[20] || (_cache[20] = vue.withModifiers((...args) => (_ctx.submit && _ctx.submit(...args)), ["prevent"]))
           }, [
             vue.createElementVNode("div", _hoisted_2, [
               _hoisted_3,
@@ -887,10 +1068,15 @@
                   modelValue: _ctx.otherContact,
                   "onUpdate:modelValue": _cache[17] || (_cache[17] = $event => ((_ctx.otherContact) = $event))
                 }, null, 8 /* PROPS */, ["modelValue"]),
+                vue.createVNode(_component_check_box, {
+                  label: "注文情報を記録する",
+                  modelValue: _ctx.saveOrder,
+                  "onUpdate:modelValue": _cache[18] || (_cache[18] = $event => ((_ctx.saveOrder) = $event))
+                }, null, 8 /* PROPS */, ["modelValue"]),
                 vue.createVNode(_component_text_area, {
                   label: "備考",
                   modelValue: _ctx.orderAppendix,
-                  "onUpdate:modelValue": _cache[18] || (_cache[18] = $event => ((_ctx.orderAppendix) = $event))
+                  "onUpdate:modelValue": _cache[19] || (_cache[19] = $event => ((_ctx.orderAppendix) = $event))
                 }, null, 8 /* PROPS */, ["modelValue"])
               ])
             ]),
@@ -898,7 +1084,13 @@
               "sum-dollar": _ctx.sumDollar,
               "reference-price-yen": _ctx.referencePriceYen,
               "estimated-shipping-fee-yen": _ctx.estimatedShippingFeeYen
-            }, null, 8 /* PROPS */, ["sum-dollar", "reference-price-yen", "estimated-shipping-fee-yen"])
+            }, null, 8 /* PROPS */, ["sum-dollar", "reference-price-yen", "estimated-shipping-fee-yen"]),
+            vue.withDirectives(vue.createVNode(_component_modal, {
+              message: _ctx.errorMessage,
+              onCloseModal: _ctx.closeErrorModal
+            }, null, 8 /* PROPS */, ["message", "onCloseModal"]), [
+              [vue.vShow, _ctx.isShowErrorModal]
+            ])
           ], 32 /* HYDRATE_EVENTS */))
     ]))
   }

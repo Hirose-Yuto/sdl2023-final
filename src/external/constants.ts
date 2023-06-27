@@ -17,4 +17,4 @@ export const getUSDRateByAPI = async () => {
 
 export const DomesticShippingFee: number = 1500
 
-export const OrderAPIURL = ''
+export const OrderAPIURL = 'https://script.google.com/macros/s/AKfycbxgv6TqUHVc_Nvfztza_Cpf9NSOSEUJ3Eq1937y5Pn3D5CIPv1WT-HZkuzXCH4goDr4/exec'

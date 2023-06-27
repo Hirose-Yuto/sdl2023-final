@@ -1,6 +1,16 @@
-import {chromeProductsType} from "../chromeExtension/types";
+export type chromeProductsType = chromeProductType[]
 
-export type apiRequest = {
+export const ChromeProductKey = "products"
+export type chromeProductType = {
+    name: string
+    sku: string
+    price: string
+    total_price: string
+    quantity: number
+}
+
+export const ChromeDeliverKey = "deliver"
+export type chromeDeliverType = {
     fullName: string,
     phone: string,
     postCodeStart: string,
@@ -8,7 +18,10 @@ export type apiRequest = {
     address: string,
     saveDeliver: boolean,
     deliverAppendix: string,
+}
 
+export const ChromeGroupKey = "group"
+export type chromeGroupType = {
     isRobotTeam: string,
     purposeAsPerson: string,
     purposeAsGroup: string,
@@ -16,18 +29,14 @@ export type apiRequest = {
     teamName: string,
     saveGroup: boolean,
     groupAppendix: string,
+}
 
+export const ChromeOrderKey = "order"
+export type chromeOrderType = {
     personInCharge: string,
     inChargeEmail: string,
     orderType: string,
     otherContact: string,
     saveOrder: boolean,
     orderAppendix: string,
-
-    products: chromeProductsType,
-    sumDollar: number,
-    rate: number,
-
-    referencePriceYen: string,
-    estimatedShippingFeeYen: string,
 }

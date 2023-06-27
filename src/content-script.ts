@@ -1,7 +1,7 @@
-import {Products} from "./types/products";
+import {chromeProductsType} from "./external/chromeExtension/types";
 
 const read_docs = async () => {
-    const products: Products = []
+    const products: chromeProductsType = []
     const items = document.getElementsByClassName("product-list__item")
     for (const item of items) {
         const product_name = item.getElementsByClassName("product-list__name").item(0)?.textContent

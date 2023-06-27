@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from "vue";
-import {Products} from "../../types/products";
+import {chromeProductsType} from "../../external/chromeExtension/types";
 import ProductCard from "./ProductCard.vue";
 
 export default defineComponent({
@@ -26,7 +26,7 @@ export default defineComponent({
   props: {
     products: {
       required: true,
-      type: Object as PropType<Products>
+      type: Object as PropType<chromeProductsType>
     },
     referencePriceYen: {
       required: true,
