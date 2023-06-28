@@ -551,7 +551,7 @@
     /*#__PURE__*/vue.createElementVNode("div", { class: "m-2 mt-4 text-sm" }, [
       /*#__PURE__*/vue.createElementVNode("div", { class: "m-1" }, " 担当者からの注文確認メール及び発注完了メールをお待ち下さい "),
       /*#__PURE__*/vue.createElementVNode("div", null, [
-        /*#__PURE__*/vue.createTextVNode(" キャンセルされる場合などご不明点などありましたら、"),
+        /*#__PURE__*/vue.createTextVNode(" キャンセルされる場合など、ご不明点ありましたら"),
         /*#__PURE__*/vue.createElementVNode("br"),
         /*#__PURE__*/vue.createTextVNode(" contact@redigiform.com"),
         /*#__PURE__*/vue.createElementVNode("br"),
@@ -1119,4 +1119,3 @@
   vue.createApp(script).mount('#app');
 
 }));
-//# sourceMappingURL=index.js.map

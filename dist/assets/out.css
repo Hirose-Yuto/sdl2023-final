@@ -936,6 +936,10 @@ select {
   width: 100%;
 }
 
+.w-md {
+  width: 28rem;
+}
+
 .min-w-full {
   min-width: 100%;
 }

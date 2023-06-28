@@ -12,7 +12,7 @@ export default {
         {
             file: pkg.module, // the name of our esm library
             format: 'umd', // the format of choice
-            sourcemap: true, // ask rollup to include sourcemaps
+            sourcemap: false, // ask rollup to include sourcemaps
             globals: {
                 vue: 'Vue'
             }
