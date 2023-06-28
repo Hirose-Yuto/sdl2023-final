@@ -36,6 +36,7 @@ export type chromeOrderType = {
     personInCharge: string,
     inChargeEmail: string,
     orderType: string,
+    orderDeadline: string,
     otherContact: string,
     saveOrder: boolean,
     orderAppendix: string,

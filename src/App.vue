@@ -22,12 +22,12 @@
         <div class="pl-4">
           <radio label="団体としての購入ですか？" required v-model="isRobotTeam"
                  :options='YesNoOptions'/>
-          <div v-if="isRobotTeam === 'yes'">
+          <div v-if="isRobotTeam === 'true'">
             <custom-select label="利用目的を教えてください" v-model="purposeAsGroup" :options="PurposesAsGroup"/>
             <text-input label="チーム番号・ID等" placeholder="例: 0000" v-model="teamNumber"/>
             <text-input label="チーム名・会社名" placeholder="例: Redigiform" v-model="teamName"/>
           </div>
-          <div v-if="isRobotTeam === 'no'">
+          <div v-if="isRobotTeam === 'false'">
             <text-input label="利用目的を教えてください" v-model="purposeAsPerson"/>
           </div>
           <check-box label="団体情報を記録する" v-model="saveGroup"/>
@@ -42,13 +42,16 @@
                       type="email"/>
           <radio label="注文種別" required vertical v-model="orderType"
                  :options='OrderTypes'/>
+          <text-input label="いつ頃までの納品を希望しますか？" required placeholder="例) 2週間ほど・7月が終わるまで" v-model="orderDeadline"/>
           <text-input label="その他見積もり等送付先" placeholder="" v-model="otherContact"/>
           <check-box label="注文情報を記録する" v-model="saveOrder"/>
           <text-area label="備考" v-model="orderAppendix"/>
         </div>
       </div>
       <submit-button :sum-dollar="sumDollar" :reference-price-yen="referencePriceYen"
-                     :estimated-shipping-fee-yen="estimatedShippingFeeYen"/>
+                     :estimated-shipping-fee-yen="estimatedShippingFeeYen"
+                     :disabled="isSubmitButtonDisabled"
+      />
       <modal :message="errorMessage" v-show="isShowErrorModal" @close-modal="closeErrorModal"/>
     </form>
   </div>
@@ -121,6 +124,7 @@ export default defineComponent({
       personInCharge: "",
       inChargeEmail: "",
       orderType: "",
+      orderDeadline: "",
       otherContact: "",
       saveOrder: false,
       orderAppendix: "",
@@ -136,6 +140,8 @@ export default defineComponent({
       isOrderComplete: false,
       isShowErrorModal: false,
       errorMessage: "",
+
+      isSubmitButtonDisabled: false
     }
   },
   mounted() {
@@ -156,6 +162,8 @@ export default defineComponent({
   },
   methods: {
     async submit() {
+      this.isSubmitButtonDisabled = true
+
       if (this.saveDeliver) {
         saveChromeDeliver({
           fullName: this.fullName,
@@ -193,6 +201,7 @@ export default defineComponent({
           personInCharge: this.personInCharge,
           inChargeEmail: this.inChargeEmail,
           orderType: this.orderType,
+          orderDeadline: this.orderDeadline,
           otherContact: this.otherContact,
           saveOrder: this.saveOrder,
           orderAppendix: this.orderAppendix,
@@ -203,11 +212,12 @@ export default defineComponent({
         clearChromeOrder().then()
       }
 
-      const response = await fetch(OrderAPIURL, {
+      const response = (await (await fetch(OrderAPIURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        // redirect: 'manual',
         body: JSON.stringify({
           fullName: this.fullName,
           phone: this.phone,
@@ -228,6 +238,7 @@ export default defineComponent({
           personInCharge: this.personInCharge,
           inChargeEmail: this.inChargeEmail,
           orderType: this.orderType,
+          orderDeadline: this.orderDeadline,
           otherContact: this.otherContact,
           saveOrder: this.saveOrder,
           orderAppendix: this.orderAppendix,
@@ -239,13 +250,14 @@ export default defineComponent({
           referencePriceYen: this.referencePriceYen,
           estimatedShippingFeeYen: this.estimatedShippingFeeYen,
         } as apiRequest)
-      })
-      if (response.ok) {
+      })).json())
+
+      if (response["statusCode"] == 200) {
         this.isOrderComplete = true
         await clearChromeProduct()
       } else {
-        let errorRes = await response.json()
-        this.errorMessage = errorRes['message']
+        this.isSubmitButtonDisabled = false
+        this.errorMessage = response['message']
         this.showErrorModal()
       }
     },
@@ -300,6 +312,7 @@ export default defineComponent({
       this.personInCharge = order.personInCharge
       this.inChargeEmail = order.inChargeEmail
       this.orderType = order.orderType
+      this.orderDeadline = order.orderDeadline
       this.otherContact = order.otherContact
       this.saveOrder = Boolean(order.saveOrder)
       this.orderAppendix = order.orderAppendix

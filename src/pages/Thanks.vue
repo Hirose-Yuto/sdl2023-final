@@ -3,16 +3,16 @@
     <green-check width="161" class="mx-auto my-4"/>
     <span class="text-2xl m-2">ご注文ありがとうございます！</span>
     <div class="text-gray-500">
-      <div class="m-2 text-sm">
-        <div>下記のメールアドレスにご注文の確認メールを送信しました</div>
-        <div>{{ email }}</div>
-      </div>
+<!--      <div class="m-2 text-sm">-->
+<!--        <div>下記のメールアドレスにご注文の確認メールを送信しました</div>-->
+<!--        <div>{{ email }}</div>-->
+<!--      </div>-->
       <div class="m-2 mt-4 text-sm">
         <div class="m-1">
-          担当者からの発注完了メールをお待ち下さい
+          担当者からの注文確認メール及び発注完了メールをお待ち下さい
         </div>
         <div>
-          キャンセルされる場合は、<br>
+          キャンセルされる場合など、ご不明点ありましたら<br>
           contact@redigiform.com<br>
           までお問い合わせください
         </div>

@@ -19,6 +19,7 @@
     <div class="pl-5 pr-3">
       <button
           type="submit"
+          :disabled="disabled"
           class="rounded-xl text-black bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-100 font-medium text-sm px-5 py-1.5 text-center w-full">
         注文を確定
       </button>
@@ -59,6 +60,10 @@ export default defineComponent({
     estimatedShippingFeeYen: {
       required: true,
       type: String
+    },
+    disabled: {
+      required: true,
+      type: Boolean,
     },
   }
 })

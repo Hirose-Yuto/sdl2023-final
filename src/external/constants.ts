@@ -4,6 +4,7 @@ export const calculateShippingFee = (sum: number) => {
     // <300で$90
     // 0.37x - 21
     // 800>で$275
+    if (sum <= 150) return 70
     if (sum <= 300) return 90
     if (sum >= 800) return 275
     return 0.37 * sum - 21

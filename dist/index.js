@@ -29,7 +29,7 @@
     key: 0,
     class: "text-red-500"
   };
-  const _hoisted_4$b = ["type", "value", "required", "placeholder"];
+  const _hoisted_4$a = ["type", "value", "required", "placeholder"];
 
   function render$d(_ctx, _cache, $props, $setup, $data, $options) {
     return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$d, [
@@ -46,7 +46,7 @@
         required: _ctx.required,
         class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
         placeholder: _ctx.placeholder
-      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$b)
+      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$a)
     ]))
   }
 
@@ -71,7 +71,7 @@
   const _hoisted_1$c = { class: "inline-flex items-center mx-2" };
   const _hoisted_2$a = ["required", "checked"];
   const _hoisted_3$a = { class: "text-base" };
-  const _hoisted_4$a = {
+  const _hoisted_4$9 = {
     key: 0,
     class: "text-red-500"
   };
@@ -88,7 +88,7 @@
       vue.createElementVNode("span", _hoisted_3$a, [
         vue.createTextVNode(vue.toDisplayString(_ctx.label), 1 /* TEXT */),
         (_ctx.required)
-          ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_4$a, "*"))
+          ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_4$9, "*"))
           : vue.createCommentVNode("v-if", true)
       ])
     ]))
@@ -116,9 +116,9 @@
     /*#__PURE__*/vue.createElementVNode("span", { class: "text-red-500" }, "*")
   ], -1 /* HOISTED */);
   const _hoisted_3$9 = { class: "flex items-center" };
-  const _hoisted_4$9 = ["value"];
-  const _hoisted_5$8 = /*#__PURE__*/vue.createElementVNode("span", { class: "mx-2" }, "-", -1 /* HOISTED */);
-  const _hoisted_6$7 = ["value"];
+  const _hoisted_4$8 = ["value"];
+  const _hoisted_5$7 = /*#__PURE__*/vue.createElementVNode("span", { class: "mx-2" }, "-", -1 /* HOISTED */);
+  const _hoisted_6$6 = ["value"];
 
   function render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$b, [
@@ -132,8 +132,8 @@
           pattern: "\\d{3}",
           class: "mt-1 block w-32 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
           placeholder: "例: 000"
-        }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$9),
-        _hoisted_5$8,
+        }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$8),
+        _hoisted_5$7,
         vue.createElementVNode("input", {
           type: "number",
           value: _ctx.end,
@@ -142,7 +142,7 @@
           pattern: "\\d{4}",
           class: "mt-1 block w-32 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
           placeholder: "例: 0000"
-        }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_6$7)
+        }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_6$6)
       ])
     ]))
   }
@@ -174,9 +174,9 @@
     key: 0,
     class: "text-red-500"
   };
-  const _hoisted_4$8 = { class: "flex items-center m-2 ml-0" };
-  const _hoisted_5$7 = ["required", "name", "id", "value", "checked"];
-  const _hoisted_6$6 = ["for"];
+  const _hoisted_4$7 = { class: "flex items-center m-2 ml-0" };
+  const _hoisted_5$6 = ["required", "name", "id", "value", "checked"];
+  const _hoisted_6$5 = ["for"];
 
   function render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$a, [
@@ -190,7 +190,7 @@
         class: vue.normalizeClass({'flex': !_ctx.vertical})
       }, [
         (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.options, (option) => {
-          return (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$8, [
+          return (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$7, [
             vue.createElementVNode("input", {
               type: "radio",
               class: "form-radio mr-2",
@@ -200,10 +200,10 @@
               value: option.id,
               checked: option.id === _ctx.modelValue,
               onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value)))
-            }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_5$7),
+            }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_5$6),
             vue.createElementVNode("label", {
               for: option.id
-            }, vue.toDisplayString(option.label), 9 /* TEXT, PROPS */, _hoisted_6$6)
+            }, vue.toDisplayString(option.label), 9 /* TEXT, PROPS */, _hoisted_6$5)
           ]))
         }), 256 /* UNKEYED_FRAGMENT */))
       ], 2 /* CLASS */)
@@ -237,7 +237,7 @@
     key: 0,
     class: "text-red-500"
   };
-  const _hoisted_4$7 = ["value", "placeholder", "required"];
+  const _hoisted_4$6 = ["value", "placeholder", "required"];
 
   function render$9(_ctx, _cache, $props, $setup, $data, $options) {
     return (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$9, [
@@ -256,7 +256,7 @@
         rows: "4",
         placeholder: _ctx.placeholder,
         required: _ctx.required
-      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$7)
+      }, null, 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$6)
     ]))
   }
 
@@ -276,9 +276,9 @@
   const _hoisted_1$8 = { class: "shadow-md my-4 border min-w-full sm:w-md sm:min-w-0" };
   const _hoisted_2$6 = { class: "p-4 pb-2" };
   const _hoisted_3$6 = { class: "font-bold text-base" };
-  const _hoisted_4$6 = { class: "font-light text-base" };
-  const _hoisted_5$6 = { class: "text-xl text-pink-600 my-1 mt-2" };
-  const _hoisted_6$5 = { class: "grid grid-cols-2 my-1" };
+  const _hoisted_4$5 = { class: "font-light text-base" };
+  const _hoisted_5$5 = { class: "text-xl text-pink-600 my-1 mt-2" };
+  const _hoisted_6$4 = { class: "grid grid-cols-2 my-1" };
   const _hoisted_7$2 = { class: "text-xl col-start-auto" };
   const _hoisted_8$2 = { class: "text-xl col-end-auto text-end" };
 
@@ -286,9 +286,9 @@
     return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$8, [
       vue.createElementVNode("div", _hoisted_2$6, [
         vue.createElementVNode("div", _hoisted_3$6, vue.toDisplayString(_ctx.product.name), 1 /* TEXT */),
-        vue.createElementVNode("div", _hoisted_4$6, vue.toDisplayString(_ctx.product.sku), 1 /* TEXT */),
-        vue.createElementVNode("div", _hoisted_5$6, vue.toDisplayString(_ctx.product.price), 1 /* TEXT */),
-        vue.createElementVNode("div", _hoisted_6$5, [
+        vue.createElementVNode("div", _hoisted_4$5, vue.toDisplayString(_ctx.product.sku), 1 /* TEXT */),
+        vue.createElementVNode("div", _hoisted_5$5, vue.toDisplayString(_ctx.product.price), 1 /* TEXT */),
+        vue.createElementVNode("div", _hoisted_6$4, [
           vue.createElementVNode("p", _hoisted_7$2, vue.toDisplayString(_ctx.product.quantity) + "個", 1 /* TEXT */),
           vue.createElementVNode("p", _hoisted_8$2, "合計: " + vue.toDisplayString(_ctx.product.total_price), 1 /* TEXT */)
         ])
@@ -321,9 +321,9 @@
   const _hoisted_1$7 = { class: "ml-auto flex flex-col items-end" };
   const _hoisted_2$5 = { class: "flex justify-end my-2" };
   const _hoisted_3$5 = { class: "border-b border-black w-48 grid grid-cols-2 px-2" };
-  const _hoisted_4$5 = /*#__PURE__*/vue.createElementVNode("div", { class: "col-start-auto text-2xl font-bold" }, "総額", -1 /* HOISTED */);
-  const _hoisted_5$5 = { class: "col-end-auto text-end text-2xl font-bold" };
-  const _hoisted_6$4 = { class: "text-end text-base text-gray-500 m-1" };
+  const _hoisted_4$4 = /*#__PURE__*/vue.createElementVNode("div", { class: "col-start-auto text-2xl font-bold" }, "総額", -1 /* HOISTED */);
+  const _hoisted_5$4 = { class: "col-end-auto text-end text-2xl font-bold" };
+  const _hoisted_6$3 = { class: "text-end text-base text-gray-500 m-1" };
 
   function render$7(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_product_card = vue.resolveComponent("product-card");
@@ -337,10 +337,10 @@
       vue.createElementVNode("div", _hoisted_2$5, [
         vue.createElementVNode("div", null, [
           vue.createElementVNode("div", _hoisted_3$5, [
-            _hoisted_4$5,
-            vue.createElementVNode("div", _hoisted_5$5, "$" + vue.toDisplayString(_ctx.sumDollar), 1 /* TEXT */)
+            _hoisted_4$4,
+            vue.createElementVNode("div", _hoisted_5$4, "$" + vue.toDisplayString(_ctx.sumDollar), 1 /* TEXT */)
           ]),
-          vue.createElementVNode("div", _hoisted_6$4, " 参考価格:" + vue.toDisplayString(_ctx.referencePriceYen) + " 円 ", 1 /* TEXT */)
+          vue.createElementVNode("div", _hoisted_6$3, " 参考価格:" + vue.toDisplayString(_ctx.referencePriceYen) + " 円 ", 1 /* TEXT */)
         ])
       ])
     ], 64 /* STABLE_FRAGMENT */))
@@ -372,9 +372,9 @@
     key: 0,
     class: "text-red-500"
   };
-  const _hoisted_4$4 = ["required"];
-  const _hoisted_5$4 = /*#__PURE__*/vue.createElementVNode("option", { value: "" }, "選択してください", -1 /* HOISTED */);
-  const _hoisted_6$3 = ["value", "selected"];
+  const _hoisted_4$3 = ["required"];
+  const _hoisted_5$3 = /*#__PURE__*/vue.createElementVNode("option", { value: "" }, "選択してください", -1 /* HOISTED */);
+  const _hoisted_6$2 = ["value", "selected"];
 
   function render$6(_ctx, _cache, $props, $setup, $data, $options) {
     return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$6, [
@@ -389,14 +389,14 @@
         onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
         class: "block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
       }, [
-        _hoisted_5$4,
+        _hoisted_5$3,
         (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.options, (option) => {
           return (vue.openBlock(), vue.createElementBlock("option", {
             value: option.id,
             selected: option.id === _ctx.modelValue
-          }, vue.toDisplayString(option.label), 9 /* TEXT, PROPS */, _hoisted_6$3))
+          }, vue.toDisplayString(option.label), 9 /* TEXT, PROPS */, _hoisted_6$2))
         }), 256 /* UNKEYED_FRAGMENT */))
-      ], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$4)
+      ], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_4$3)
     ]))
   }
 
@@ -418,6 +418,10 @@
               required: true,
               type: String
           },
+          disabled: {
+              required: true,
+              type: Boolean,
+          },
       }
   });
 
@@ -436,12 +440,9 @@
     /*#__PURE__*/vue.createTextVNode(" および当サイト上の販売条件に同意の上、商品をご注文されたことになります。 価格については必ず当サイト及び利用規約をご確認ください。 ")
   ], -1 /* HOISTED */);
   const _hoisted_3$3 = { class: "pl-5 pr-3" };
-  const _hoisted_4$3 = /*#__PURE__*/vue.createElementVNode("button", {
-    type: "submit",
-    class: "rounded-xl text-black bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-100 font-medium text-sm px-5 py-1.5 text-center w-full"
-  }, " 注文を確定 ", -1 /* HOISTED */);
-  const _hoisted_5$3 = { class: "mt-1" };
-  const _hoisted_6$2 = { class: "text-lg text-pink-600 my-1 mt-2" };
+  const _hoisted_4$2 = ["disabled"];
+  const _hoisted_5$2 = { class: "mt-1" };
+  const _hoisted_6$1 = { class: "text-lg text-pink-600 my-1 mt-2" };
   const _hoisted_7$1 = /*#__PURE__*/vue.createElementVNode("span", { class: "text-gray-400" }, " + 配送料・手数料 + 税 ", -1 /* HOISTED */);
   const _hoisted_8$1 = { class: "mt-1" };
   const _hoisted_9$1 = { class: "text-gray-400 text-base" };
@@ -451,9 +452,13 @@
     return (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$5, [
       _hoisted_2$3,
       vue.createElementVNode("div", _hoisted_3$3, [
-        _hoisted_4$3,
-        vue.createElementVNode("div", _hoisted_5$3, [
-          vue.createElementVNode("span", _hoisted_6$2, " ご請求額: $" + vue.toDisplayString(_ctx.sumDollar), 1 /* TEXT */),
+        vue.createElementVNode("button", {
+          type: "submit",
+          disabled: _ctx.disabled,
+          class: "rounded-xl text-black bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:outline-none focus:ring-yellow-100 font-medium text-sm px-5 py-1.5 text-center w-full"
+        }, " 注文を確定 ", 8 /* PROPS */, _hoisted_4$2),
+        vue.createElementVNode("div", _hoisted_5$2, [
+          vue.createElementVNode("span", _hoisted_6$1, " ご請求額: $" + vue.toDisplayString(_ctx.sumDollar), 1 /* TEXT */),
           _hoisted_7$1
         ]),
         vue.createElementVNode("div", _hoisted_8$1, [
@@ -468,27 +473,29 @@
   script$5.__file = "src/components/SubmitButton.vue";
 
   const YesNoOptions = [
-      { label: "はい", id: "yes" },
-      { label: "いいえ", id: "no" }
+      { label: "はい", id: "true" },
+      { label: "いいえ", id: "false" }
   ];
 
   const PurposesAsGroup = [
-      { label: "FRC", id: "frc" },
-      { label: "FTC", id: "ftc" },
-      { label: "VEX", id: "vex" },
-      { label: "高専ロボコン", id: "kosen" },
-      { label: "学生ロボコン", id: "gakusei" },
-      { label: "会社の業務", id: "company" },
-      { label: "無回答", id: "no_answer" },
-      { label: "その他", id: "other" },
+      { label: "FRC", id: "FRC" },
+      { label: "FTC", id: "FTC" },
+      { label: "VEX", id: "VEX" },
+      { label: "高専ロボコン", id: "高専ロボコン" },
+      { label: "学生ロボコン", id: "学生ロボコン" },
+      { label: "会社の業務", id: "会社" },
+      { label: "無回答", id: "無回答" },
+      { label: "その他", id: "その他" },
   ];
 
   const OrderTypes = [
-      { label: "数日遅くても構わないので、他の注文をまとめて送料を節約する", id: "unitee" },
-      { label: "最短日時での納品を希望する", id: "asap" },
+      { label: "数日遅くても構わないので、他の注文をまとめて送料を節約する", id: "まとめて送料節約" },
+      { label: "最短日時での納品を希望する", id: "最短での納品" },
   ];
 
   const calculateShippingFee = (sum) => {
+      if (sum <= 150)
+          return 70;
       if (sum <= 300)
           return 90;
       if (sum >= 800)
@@ -536,17 +543,20 @@
 
   const _hoisted_1$3 = { class: "text-center" };
   const _hoisted_2$2 = /*#__PURE__*/vue.createElementVNode("span", { class: "text-2xl m-2" }, "ご注文ありがとうございます！", -1 /* HOISTED */);
-  const _hoisted_3$2 = { class: "text-gray-500" };
-  const _hoisted_4$2 = { class: "m-2 text-sm" };
-  const _hoisted_5$2 = /*#__PURE__*/vue.createElementVNode("div", null, "下記のメールアドレスにご注文の確認メールを送信しました", -1 /* HOISTED */);
-  const _hoisted_6$1 = /*#__PURE__*/vue.createElementVNode("div", { class: "m-2 mt-4 text-sm" }, [
-    /*#__PURE__*/vue.createElementVNode("div", { class: "m-1" }, " 担当者からの発注完了メールをお待ち下さい "),
-    /*#__PURE__*/vue.createElementVNode("div", null, [
-      /*#__PURE__*/vue.createTextVNode(" キャンセルされる場合は、"),
-      /*#__PURE__*/vue.createElementVNode("br"),
-      /*#__PURE__*/vue.createTextVNode(" contact@redigiform.com"),
-      /*#__PURE__*/vue.createElementVNode("br"),
-      /*#__PURE__*/vue.createTextVNode(" までお問い合わせください ")
+  const _hoisted_3$2 = /*#__PURE__*/vue.createElementVNode("div", { class: "text-gray-500" }, [
+    /*#__PURE__*/vue.createCommentVNode("      <div class=\"m-2 text-sm\">"),
+    /*#__PURE__*/vue.createCommentVNode("        <div>下記のメールアドレスにご注文の確認メールを送信しました</div>"),
+    /*#__PURE__*/vue.createCommentVNode("        <div>{{ email }}</div>"),
+    /*#__PURE__*/vue.createCommentVNode("      </div>"),
+    /*#__PURE__*/vue.createElementVNode("div", { class: "m-2 mt-4 text-sm" }, [
+      /*#__PURE__*/vue.createElementVNode("div", { class: "m-1" }, " 担当者からの注文確認メール及び発注完了メールをお待ち下さい "),
+      /*#__PURE__*/vue.createElementVNode("div", null, [
+        /*#__PURE__*/vue.createTextVNode(" キャンセルされる場合などご不明点などありましたら、"),
+        /*#__PURE__*/vue.createElementVNode("br"),
+        /*#__PURE__*/vue.createTextVNode(" contact@redigiform.com"),
+        /*#__PURE__*/vue.createElementVNode("br"),
+        /*#__PURE__*/vue.createTextVNode(" までお問い合わせください ")
+      ])
     ])
   ], -1 /* HOISTED */);
 
@@ -559,13 +569,7 @@
         class: "mx-auto my-4"
       }),
       _hoisted_2$2,
-      vue.createElementVNode("div", _hoisted_3$2, [
-        vue.createElementVNode("div", _hoisted_4$2, [
-          _hoisted_5$2,
-          vue.createElementVNode("div", null, vue.toDisplayString(_ctx.email), 1 /* TEXT */)
-        ]),
-        _hoisted_6$1
-      ]),
+      _hoisted_3$2,
       vue.createElementVNode("button", {
         onClick: _cache[0] || (_cache[0] = (...args) => (_ctx.closeWindow && _ctx.closeWindow(...args))),
         class: "mt-10 p-3 border vo rounded w-56"
@@ -611,7 +615,7 @@
     class: "bg-white z-2 text-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-xs sm:w-72"
   };
   const _hoisted_3$1 = { class: "p-4" };
-  const _hoisted_4$1 = /*#__PURE__*/vue.createElementVNode("div", { class: "text-lg" }, "エラーが発生しました", -1 /* HOISTED */);
+  const _hoisted_4$1 = /*#__PURE__*/vue.createElementVNode("div", { class: "text-lg py-2" }, "エラーが発生しました", -1 /* HOISTED */);
   const _hoisted_5$1 = { class: "text-gray-500" };
 
   function render$1(_ctx, _cache, $props, $setup, $data, $options) {
@@ -628,7 +632,7 @@
           vue.createElementVNode("div", _hoisted_5$1, vue.toDisplayString(_ctx.message || "しばらく待ってからやり直してください"), 1 /* TEXT */)
         ]),
         vue.createElementVNode("button", {
-          class: "inline-block w-full bg-red-400 h-7 text-white border rounded text-center align-middle bg-white",
+          class: "inline-block w-full bg-red-400 h-7 text-white border rounded text-center align-middle",
           onClick: _cache[0] || (_cache[0] = (...args) => (_ctx.closeModal && _ctx.closeModal(...args)))
         }, " 閉じる ")
       ]),
@@ -715,6 +719,7 @@
               personInCharge: "",
               inChargeEmail: "",
               orderType: "",
+              orderDeadline: "",
               otherContact: "",
               saveOrder: false,
               orderAppendix: "",
@@ -727,6 +732,7 @@
               isOrderComplete: false,
               isShowErrorModal: false,
               errorMessage: "",
+              isSubmitButtonDisabled: false
           };
       },
       mounted() {
@@ -746,6 +752,7 @@
       },
       methods: {
           async submit() {
+              this.isSubmitButtonDisabled = true;
               if (this.saveDeliver) {
                   saveChromeDeliver({
                       fullName: this.fullName,
@@ -783,6 +790,7 @@
                       personInCharge: this.personInCharge,
                       inChargeEmail: this.inChargeEmail,
                       orderType: this.orderType,
+                      orderDeadline: this.orderDeadline,
                       otherContact: this.otherContact,
                       saveOrder: this.saveOrder,
                       orderAppendix: this.orderAppendix,
@@ -793,7 +801,7 @@
               else {
                   clearChromeOrder().then();
               }
-              const response = await fetch(OrderAPIURL, {
+              const response = (await (await fetch(OrderAPIURL, {
                   method: "POST",
                   headers: {
                       "Content-Type": "application/json",
@@ -816,6 +824,7 @@
                       personInCharge: this.personInCharge,
                       inChargeEmail: this.inChargeEmail,
                       orderType: this.orderType,
+                      orderDeadline: this.orderDeadline,
                       otherContact: this.otherContact,
                       saveOrder: this.saveOrder,
                       orderAppendix: this.orderAppendix,
@@ -825,14 +834,14 @@
                       referencePriceYen: this.referencePriceYen,
                       estimatedShippingFeeYen: this.estimatedShippingFeeYen,
                   })
-              });
-              if (response.ok) {
+              })).json());
+              if (response["statusCode"] == 200) {
                   this.isOrderComplete = true;
                   await clearChromeProduct();
               }
               else {
-                  let errorRes = await response.json();
-                  this.errorMessage = errorRes['message'];
+                  this.isSubmitButtonDisabled = false;
+                  this.errorMessage = response['message'];
                   this.showErrorModal();
               }
           },
@@ -889,6 +898,7 @@
               this.personInCharge = order.personInCharge;
               this.inChargeEmail = order.inChargeEmail;
               this.orderType = order.orderType;
+              this.orderDeadline = order.orderDeadline;
               this.otherContact = order.otherContact;
               this.saveOrder = Boolean(order.saveOrder);
               this.orderAppendix = order.orderAppendix;
@@ -931,7 +941,7 @@
           }, null, 8 /* PROPS */, ["email"]))
         : (vue.openBlock(), vue.createElementBlock("form", {
             key: 1,
-            onSubmit: _cache[20] || (_cache[20] = vue.withModifiers((...args) => (_ctx.submit && _ctx.submit(...args)), ["prevent"]))
+            onSubmit: _cache[21] || (_cache[21] = vue.withModifiers((...args) => (_ctx.submit && _ctx.submit(...args)), ["prevent"]))
           }, [
             vue.createElementVNode("div", _hoisted_2, [
               _hoisted_3,
@@ -993,7 +1003,7 @@
                   "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => ((_ctx.isRobotTeam) = $event)),
                   options: _ctx.YesNoOptions
                 }, null, 8 /* PROPS */, ["modelValue", "options"]),
-                (_ctx.isRobotTeam === 'yes')
+                (_ctx.isRobotTeam === 'true')
                   ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_10, [
                       vue.createVNode(_component_custom_select, {
                         label: "利用目的を教えてください",
@@ -1015,7 +1025,7 @@
                       }, null, 8 /* PROPS */, ["modelValue"])
                     ]))
                   : vue.createCommentVNode("v-if", true),
-                (_ctx.isRobotTeam === 'no')
+                (_ctx.isRobotTeam === 'false')
                   ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_11, [
                       vue.createVNode(_component_text_input, {
                         label: "利用目的を教えてください",
@@ -1063,28 +1073,36 @@
                   options: _ctx.OrderTypes
                 }, null, 8 /* PROPS */, ["modelValue", "options"]),
                 vue.createVNode(_component_text_input, {
+                  label: "いつ頃までの納品を希望しますか？",
+                  required: "",
+                  placeholder: "例) 2週間ほど・7月が終わるまで",
+                  modelValue: _ctx.orderDeadline,
+                  "onUpdate:modelValue": _cache[17] || (_cache[17] = $event => ((_ctx.orderDeadline) = $event))
+                }, null, 8 /* PROPS */, ["modelValue"]),
+                vue.createVNode(_component_text_input, {
                   label: "その他見積もり等送付先",
                   placeholder: "",
                   modelValue: _ctx.otherContact,
-                  "onUpdate:modelValue": _cache[17] || (_cache[17] = $event => ((_ctx.otherContact) = $event))
+                  "onUpdate:modelValue": _cache[18] || (_cache[18] = $event => ((_ctx.otherContact) = $event))
                 }, null, 8 /* PROPS */, ["modelValue"]),
                 vue.createVNode(_component_check_box, {
                   label: "注文情報を記録する",
                   modelValue: _ctx.saveOrder,
-                  "onUpdate:modelValue": _cache[18] || (_cache[18] = $event => ((_ctx.saveOrder) = $event))
+                  "onUpdate:modelValue": _cache[19] || (_cache[19] = $event => ((_ctx.saveOrder) = $event))
                 }, null, 8 /* PROPS */, ["modelValue"]),
                 vue.createVNode(_component_text_area, {
                   label: "備考",
                   modelValue: _ctx.orderAppendix,
-                  "onUpdate:modelValue": _cache[19] || (_cache[19] = $event => ((_ctx.orderAppendix) = $event))
+                  "onUpdate:modelValue": _cache[20] || (_cache[20] = $event => ((_ctx.orderAppendix) = $event))
                 }, null, 8 /* PROPS */, ["modelValue"])
               ])
             ]),
             vue.createVNode(_component_submit_button, {
               "sum-dollar": _ctx.sumDollar,
               "reference-price-yen": _ctx.referencePriceYen,
-              "estimated-shipping-fee-yen": _ctx.estimatedShippingFeeYen
-            }, null, 8 /* PROPS */, ["sum-dollar", "reference-price-yen", "estimated-shipping-fee-yen"]),
+              "estimated-shipping-fee-yen": _ctx.estimatedShippingFeeYen,
+              disabled: _ctx.isSubmitButtonDisabled
+            }, null, 8 /* PROPS */, ["sum-dollar", "reference-price-yen", "estimated-shipping-fee-yen", "disabled"]),
             vue.withDirectives(vue.createVNode(_component_modal, {
               message: _ctx.errorMessage,
               onCloseModal: _ctx.closeErrorModal
