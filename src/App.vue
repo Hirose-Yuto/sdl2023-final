@@ -150,7 +150,6 @@ export default defineComponent({
     this.loadGroup().then()
     this.loadOrder().then()
     this.getUSDRate().then()
-
   },
   computed: {
     referencePriceYen: function () {
@@ -273,7 +272,7 @@ export default defineComponent({
       if (!products) return
       this.products = products
       this.sumDollar = products.reduce((ac: number, p: chromeProductType) => {
-        ac += parseInt(p.total_price.trim().slice(1))
+        ac += parseFloat(p.total_price.trim().replace(",", "").slice(1))
         return ac
       }, 0)
     },

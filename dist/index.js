@@ -320,9 +320,9 @@
 
   const _hoisted_1$7 = { class: "ml-auto flex flex-col items-end" };
   const _hoisted_2$5 = { class: "flex justify-end my-2" };
-  const _hoisted_3$5 = { class: "border-b border-black w-48 grid grid-cols-2 px-2" };
-  const _hoisted_4$4 = /*#__PURE__*/vue.createElementVNode("div", { class: "col-start-auto text-2xl font-bold" }, "総額", -1 /* HOISTED */);
-  const _hoisted_5$4 = { class: "col-end-auto text-end text-2xl font-bold" };
+  const _hoisted_3$5 = { class: "border-b border-black flex justify-between" };
+  const _hoisted_4$4 = /*#__PURE__*/vue.createElementVNode("div", { class: "mr-4 text-2xl font-bold" }, "総額", -1 /* HOISTED */);
+  const _hoisted_5$4 = { class: "text-end text-2xl font-bold" };
   const _hoisted_6$3 = { class: "text-end text-base text-gray-500 m-1" };
 
   function render$7(_ctx, _cache, $props, $setup, $data, $options) {
@@ -857,7 +857,7 @@
                   return;
               this.products = products;
               this.sumDollar = products.reduce((ac, p) => {
-                  ac += parseInt(p.total_price.trim().slice(1));
+                  ac += parseFloat(p.total_price.trim().replace(",", "").slice(1));
                   return ac;
               }, 0);
           },

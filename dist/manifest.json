@@ -7,7 +7,7 @@
     "default_popup": "popup.html",
     "default_title": "Click to show an alert"
   },
-  "permissions": ["scripting", "tabs", "storage"],
+  "permissions": ["storage"],
   "background": {
     "service_worker": "background.js"
   },
