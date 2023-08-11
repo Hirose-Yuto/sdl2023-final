@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AndyMark via Redigiform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "【日本唯一】AndyMark公式代理店であるRedigiformが提供するAndyMark商品注文サービスです。この拡張機能をインストールすることで、AndyMark公式サイトよりRedigiformへの注文が気軽に行えます。",
   "action": {
     "default_popup": "popup.html",
